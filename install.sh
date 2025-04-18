@@ -1,6 +1,6 @@
 #!/bin/bash
 
-##### ZSH #####
+##### TERMINAL #####
 # instalar zsh
 if ! command -v zsh &> /dev/null; then
     echo "Instalando zsh..."
@@ -10,6 +10,40 @@ if ! command -v zsh &> /dev/null; then
     }
 fi
 echo -e "zsh instalado en el sistema\n"
+
+# font
+FONT="JetBrainsMono"
+DEST="$HOME/.local/share/fonts"
+
+if fc-list | grep -qi "$FONT"; then
+    echo -e "Fuente $FONT instalada en el sistema.\n"
+else
+    mkdir -p "$DEST"
+
+    pushd "$DEST" > /dev/null || {
+        echo "Error: no se pudo acceder al directorio de destino."
+        exit 1
+    }
+
+    echo "Descargando $FONT Nerd Font..."
+    curl -fLo "${FONT}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/${FONT}.zip"
+
+    if [ $? -ne 0 ]; then
+        echo "Error al descargar la fuente. Abortando instalación."
+        popd > /dev/null
+        exit 1
+    else
+        unzip -o "${FONT}.zip"
+        rm "${FONT}.zip"
+
+        echo "Recargando caché de fuentes..."
+        fc-cache -fv
+
+        echo -e "Fuente $FONT instalada en el sistema.\n"
+    fi
+
+    popd > /dev/null
+fi
 
 # instalar oh my zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -44,39 +78,5 @@ echo "Enlace simbólico de .zshrc creado"
 ln -sf ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 echo -e "Enlace simbólico de .p10k.zsh creado\n"
 
-##### FONT #####
-FONT="JetBrainsMono"
-DEST="$HOME/.local/share/fonts"
-
-if fc-list | grep -qi "$FONT"; then
-    echo "Fuente $FONT instalada en el sistema."
-else
-    mkdir -p "$DEST"
-
-    pushd "$DEST" > /dev/null || {
-        echo "Error: no se pudo acceder al directorio de destino."
-        exit 1
-    }
-
-    echo "Descargando $FONT Nerd Font..."
-    curl -fLo "${FONT}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/${FONT}.zip"
-
-    if [ $? -ne 0 ]; then
-        echo "Error al descargar la fuente. Abortando instalación."
-        popd > /dev/null
-        exit 1
-    else
-        unzip -o "${FONT}.zip"
-        rm "${FONT}.zip"
-
-        echo "Recargando caché de fuentes..."
-        fc-cache -fv
-
-        echo "Fuente $FONT instalada en el sistema."
-    fi
-
-    popd > /dev/null
-fi
-
 ##### FIN #####
-echo -e "\nConfiguración de dotfiles completada"
+echo "Configuración de dotfiles completada"
