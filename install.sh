@@ -58,6 +58,33 @@ fi
 echo -e "Oh My Zsh instalado en el sistema\n"
 
 # plugins
+# syntax highlighting
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
+    echo "Instalando zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+
+    if [ $? -ne 0 ]; then
+        echo "Error al clonar zsh-syntax-highlighting. Abortando."
+        exit 1
+    fi
+fi
+echo "zsh-syntax-highlighting ya está instalado."
+
+# autosuggestions
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
+    echo "Instalando zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+    if [ $? -ne 0 ]; then
+        echo "Error al clonar zsh-autosuggestions. Abortando."
+        exit 1
+    fi
+fi
+echo "zsh-autosuggestions ya está instalado."
+
+echo ""
 
 # instalar powerlevel10k
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
@@ -73,9 +100,9 @@ fi
 echo -e "Powerlevel10k instalado en el sistema.\n"
 
 # link
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
 echo "Enlace simbólico de .zshrc creado"
-ln -sf ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+ln -sf ~/dotfiles/terminal/.p10k.zsh ~/.p10k.zsh
 echo -e "Enlace simbólico de .p10k.zsh creado\n"
 
 ##### FIN #####
