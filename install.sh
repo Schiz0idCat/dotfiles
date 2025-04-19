@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt update
+
 ##### TERMINAL #####
 # instalar zsh
 if ! command -v zsh &> /dev/null; then
@@ -99,11 +101,30 @@ if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
 fi
 echo -e "Powerlevel10k instalado en el sistema.\n"
 
+echo ""
+
+# comandos extra
+# instalar bat
+if ! command -v bat >/dev/null 2>&1 && ! command -v batcat >/dev/null 2>&1; then
+    echo "Instalando bat..."
+    sudo apt install -y bat
+
+    if [ $? -ne 0 ]; then
+        echo "Error al instalar bat. Abortando."
+        exit 1
+    fi
+fi
+echo "bat instalado en el sistema"
+
 # link
 ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
 echo "Enlace simbólico de .zshrc creado"
+ln -sf ~/dotfiles/terminal/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+echo "Enlace simbólito de aliases.zsh creado"
 ln -sf ~/dotfiles/terminal/.p10k.zsh ~/.p10k.zsh
-echo -e "Enlace simbólico de .p10k.zsh creado\n"
+echo "Enlace simbólico de .p10k.zsh creado"
+
+echo ""
 
 ##### FIN #####
 echo "Configuración de dotfiles completada"
