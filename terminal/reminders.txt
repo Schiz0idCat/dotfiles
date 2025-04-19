@@ -6,6 +6,8 @@ POWERLEVEL10K
 ZSH
 - plugin: sudo
     https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo
+- plugin: copyfile
+    https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile
 - plugin: syntax highlighting
     https://github.com/zsh-users/zsh-syntax-highlighting/tree/master
 - plugin: autosuggestions
