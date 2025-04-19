@@ -1,6 +1,7 @@
-# personal aliases
+##### batcat #####
 alias cat='batcat'
 
+##### lsd #####
 alias ls='lsd'
 alias ll='lsd -l'
 alias la='lsd -a'
