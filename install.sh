@@ -126,7 +126,7 @@ if ! command -v lsd >/dev/null 2>&1; then
         exit 1
     fi
 fi
-echo "lsd ya está instalado. Saltando instalación."
+echo "lsd instalado en el sistema"
 
 echo ""
 
