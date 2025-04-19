@@ -116,6 +116,20 @@ if ! command -v bat >/dev/null 2>&1 && ! command -v batcat >/dev/null 2>&1; then
 fi
 echo "bat instalado en el sistema"
 
+# instalar lsd
+if ! command -v lsd >/dev/null 2>&1; then
+    echo "Instalando lsd..."
+    sudo apt install -y lsd
+
+    if [ $? -ne 0 ]; then
+        echo "Error al instalar lsd. Abortando."
+        exit 1
+    fi
+fi
+echo "lsd ya está instalado. Saltando instalación."
+
+echo ""
+
 # link
 ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
 echo "Enlace simbólico de .zshrc creado"
