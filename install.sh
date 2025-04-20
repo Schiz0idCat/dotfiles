@@ -157,15 +157,29 @@ if ! command -v nvim &> /dev/null; then
 fi
 echo "Neovim ya está instalado en el sistema."
 
+# Desde este punto se asume que nvchad está instalado
+mkdir ~/.config/nvim/lua/custom
+
 echo ""
 
-# link
+##### LINKS #####
+# .zshrc
 ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
 echo "Enlace simbólico de .zshrc creado"
+
+# aliases zsh
 ln -sf ~/dotfiles/terminal/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 echo "Enlace simbólito de aliases.zsh creado"
+
+# powerlevel10k
 ln -sf ~/dotfiles/terminal/.p10k.zsh ~/.p10k.zsh
 echo "Enlace simbólico de .p10k.zsh creado"
+
+# nvchad ##### ASUMIENDO QUE ESTÁ INSTALADO #####
+ln -sf ~/dotfiles/nvim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
+ln -sf ~/dotfiles/nvim/options.lua ~/.config/nvim/lua/options.lua
+ln -sf ~/dotfiles/nvim/plugins/nvimtree.lua ~/.config/nvim/lua/plugins/nvimtree.lua
+echo "Enlace simbólico de nvchad creado"
 
 echo ""
 
