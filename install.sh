@@ -178,6 +178,7 @@ echo "Enlace simbólico de .p10k.zsh creado"
 ln -sf ~/dotfiles/nvim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
 ln -sf ~/dotfiles/nvim/options.lua ~/.config/nvim/lua/options.lua
 ln -sf ~/dotfiles/nvim/configs/lspconfig.lua ~/.config/nvim/lua/configs/lspconfig.lua
+ln -sf ~/dotfiles/nvim/plugins/cmp.lua ~/.config/nvim/lua/plugins/cmp.lua
 ln -sf ~/dotfiles/nvim/plugins/nvimtree.lua ~/.config/nvim/lua/plugins/nvimtree.lua
 echo "Enlace simbólico de nvchad creado"
 
