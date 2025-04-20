@@ -158,7 +158,6 @@ fi
 echo "Neovim ya está instalado en el sistema."
 
 # Desde este punto se asume que nvchad está instalado
-mkdir ~/.config/nvim/lua/custom
 
 echo ""
 
@@ -175,7 +174,7 @@ echo "Enlace simbólito de aliases.zsh creado"
 ln -sf ~/dotfiles/terminal/.p10k.zsh ~/.p10k.zsh
 echo "Enlace simbólico de .p10k.zsh creado"
 
-# nvchad ##### ASUMIENDO QUE ESTÁ INSTALADO #####
+# nvchad ##### ASUMIENDO QUE NVCHAD ESTÁ INSTALADO #####
 ln -sf ~/dotfiles/nvim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
 ln -sf ~/dotfiles/nvim/options.lua ~/.config/nvim/lua/options.lua
 ln -sf ~/dotfiles/nvim/configs/lspconfig.lua ~/.config/nvim/lua/configs/lspconfig.lua
