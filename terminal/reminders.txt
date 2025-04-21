@@ -4,6 +4,8 @@ POWERLEVEL10K
     typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
 
 ZSH
+- plugin: git
+    https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 - plugin: sudo
     https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo
 - plugin: copyfile
