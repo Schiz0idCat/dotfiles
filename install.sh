@@ -163,16 +163,13 @@ echo ""
 
 ##### LINKS #####
 # .zshrc
-ln -sf ~/dotfiles/terminal/.zshrc ~/.zshrc
-echo "Enlace simbólico de .zshrc creado"
-
-# aliases zsh
-ln -sf ~/dotfiles/terminal/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-echo "Enlace simbólito de aliases.zsh creado"
+ln -sf ~/dotfiles/terminal/zsh/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/terminal/zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+echo "Enlaces simbólicos de zsh creados"
 
 # powerlevel10k
-ln -sf ~/dotfiles/terminal/.p10k.zsh ~/.p10k.zsh
-echo "Enlace simbólico de .p10k.zsh creado"
+ln -sf ~/dotfiles/terminal/powerlevel10k/.p10k.zsh ~/.p10k.zsh
+echo "Enlace simbólico de powerlevel10k creado"
 
 # nvchad ##### ASUMIENDO QUE NVCHAD ESTÁ INSTALADO #####
 ln -sf ~/dotfiles/nvim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
