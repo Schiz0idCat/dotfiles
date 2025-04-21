@@ -5,7 +5,6 @@ return {
             {
                 name = "nvim_lsp", -- LSP autocompletion
                 max_item_count = 5, -- max suggestions
-                dup = 0,
                 entry_filter = function (entry, _)
                     local kind = require("cmp.types").lsp.CompletionItemKind[entry:get_kind()]
                     local allowed_kinds = { -- labels kind that I want to see
