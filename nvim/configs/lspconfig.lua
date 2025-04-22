@@ -3,6 +3,11 @@ local lspconfig = require "lspconfig"
 
 nvlsp.defaults()
 
+vim.diagnostic.config({
+    virtual_text = true,     -- show errors in the code
+    update_in_insert = true, -- show errors while insertion mode
+})
+
 local servers = { "clangd" }
 vim.lsp.enable(servers)
 
