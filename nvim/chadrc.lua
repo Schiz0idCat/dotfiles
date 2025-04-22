@@ -11,4 +11,6 @@ M.ui = {
     }
 }
 
+require("configs.spell");
+
 return M

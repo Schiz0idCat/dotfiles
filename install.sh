@@ -2,6 +2,27 @@
 
 sudo apt update
 
+# Instalar nodejs y npm
+if ! command -v nodejs &>/dev/null || ! command -v npm &>/dev/null; then
+    echo "Instalando nodejs y npm..."
+    sudo apt install -y nodejs npm || {
+        echo "Falló la instalación de nodejs o npm. Abortando."
+        exit 1
+    }
+fi
+echo "nodejs y npm ya están instalados."
+
+
+# Instalar bash-language-server
+if ! command -v bash-language-server &>/dev/null; then
+    echo "Instalando bash-language-server..."
+    npm i -g bash-language-server|| {
+        echo "Falló la instalación de bash-language-server. Abortando."
+        exit 1
+    }
+fi
+echo "bash-language-server ya está instalado."
+
 ##### TERMINAL #####
 # instalar zsh
 if ! command -v zsh &> /dev/null; then
@@ -159,6 +180,11 @@ echo "Neovim ya está instalado en el sistema."
 
 # Desde este punto se asume que nvchad está instalado
 
+if [ ! -d "$HOME/.config/nvim/spell/" ]; then
+    mkdir ~/.config/nvim/spell/
+fi
+echo "Directorio de idiomas creado"
+
 echo ""
 
 ##### LINKS #####
@@ -172,6 +198,8 @@ ln -sf ~/dotfiles/terminal/powerlevel10k/.p10k.zsh ~/.p10k.zsh
 echo "Enlace simbólico de powerlevel10k creado"
 
 # nvchad ##### ASUMIENDO QUE NVCHAD ESTÁ INSTALADO #####
+ln -sf ~/dotfiles/nvim/spell/es.utf-8.spl ~/.config/nvim/spell/es.utf-8.spl
+ln -sf ~/dotfiles/nvim/spell/es.utf-8.sug ~/.config/nvim/spell/es.utf-8.sug
 ln -sf ~/dotfiles/nvim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
 ln -sf ~/dotfiles/nvim/options.lua ~/.config/nvim/lua/options.lua
 ln -sf ~/dotfiles/nvim/configs/lspconfig.lua ~/.config/nvim/lua/configs/lspconfig.lua

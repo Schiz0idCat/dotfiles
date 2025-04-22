@@ -7,7 +7,7 @@ vim.diagnostic.config({
     update_in_insert = true, -- show errors while insertion mode
 })
 
-local servers = { "clangd" }
+local servers = { "clangd", "bashls" }
 vim.lsp.enable(servers)
 
 for _, lsp in ipairs(servers) do
