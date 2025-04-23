@@ -105,7 +105,7 @@ echo ""
 
 # Extra commands
 # Install bat
-if ! command -v batcat >/dev/null 2>&1 && ! command -v batcat >/dev/null 2>&1; then
+if ! command -v batcat >/dev/null 2>&1 && ! command -v bat >/dev/null 2>&1; then
     echo "Installing bat..."
     if ! sudo apt install -y bat; then
         echo "Error: failed to install bat. Aborting."
