@@ -21,12 +21,10 @@ return {
                     return allowed_kinds[kind] == true
                 end,
             },
-
             {
                 name = "path",  -- path autocompletion
                 max_item_count = 5, -- max suggestions
             },
-
         }
         return opts
     end,
