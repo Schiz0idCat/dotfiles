@@ -17,6 +17,7 @@ return {
                         Snippet = true,
                         Constant = true,
                         Class = true,
+                        File = true,
                     }
                     return allowed_kinds[kind] == true
                 end,
