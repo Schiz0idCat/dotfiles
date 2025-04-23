@@ -4,7 +4,24 @@ local lspconfig = require "lspconfig"
 nvlsp.defaults()
 
 vim.diagnostic.config({
-    update_in_insert = true, -- show errors while insertion mode
+    update_in_insert = true,
+})
+
+-- enable and disable virtual_text dynamically
+vim.api.nvim_create_augroup("ToggleVirtualText", { clear = true })
+
+vim.api.nvim_create_autocmd("InsertEnter", { -- disable virtual_text when entering insert mode
+  group = "ToggleVirtualText",
+  callback = function()
+    vim.diagnostic.config({ virtual_text = false })
+  end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", { -- enable virtual_text when exiting insert mode
+  group = "ToggleVirtualText",
+  callback = function()
+    vim.diagnostic.config({ virtual_text = true })
+  end,
 })
 
 local servers = { "clangd", "bashls" }
