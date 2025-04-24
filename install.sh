@@ -187,23 +187,23 @@ echo ""
 
 ##### LINKS #####
 # .zshrc
-ln -sf ~/dotfiles/terminal/zsh/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/terminal/zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+ln -sf ~/dotfiles/terminal/zsh/.zshrc ~/
+ln -sf ~/dotfiles/terminal/zsh/aliases.zsh ~/.oh-my-zsh/custom/
 echo "zsh link created"
 
 # powerlevel10k
-ln -sf ~/dotfiles/terminal/powerlevel10k/.p10k.zsh ~/.p10k.zsh
+ln -sf ~/dotfiles/terminal/powerlevel10k/.p10k.zsh ~/
 echo "powerlevel10k link created"
 
 # nvchad
-ln -sf ~/dotfiles/nvim/spell/es.utf-8.spl ~/.config/nvim/spell/es.utf-8.spl
-ln -sf ~/dotfiles/nvim/spell/es.utf-8.sug ~/.config/nvim/spell/es.utf-8.sug
-ln -sf ~/dotfiles/nvim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
-ln -sf ~/dotfiles/nvim/options.lua ~/.config/nvim/lua/options.lua
-ln -sf ~/dotfiles/nvim/configs/lspconfig.lua ~/.config/nvim/lua/configs/lspconfig.lua
-ln -sf ~/dotfiles/nvim/configs/spell.lua ~/.config/nvim/lua/configs/spell.lua
-ln -sf ~/dotfiles/nvim/plugins/cmp.lua ~/.config/nvim/lua/plugins/cmp.lua
-ln -sf ~/dotfiles/nvim/plugins/nvimtree.lua ~/.config/nvim/lua/plugins/nvimtree.lua
+ln -sf ~/dotfiles/nvim/spell/es.utf-8.spl ~/.config/nvim/spell/
+ln -sf ~/dotfiles/nvim/spell/es.utf-8.sug ~/.config/nvim/spell/
+ln -sf ~/dotfiles/nvim/chadrc.lua ~/.config/nvim/lua/
+ln -sf ~/dotfiles/nvim/options.lua ~/.config/nvim/lua/
+ln -sf ~/dotfiles/nvim/configs/lspconfig.lua ~/.config/nvim/lua/configs/
+ln -sf ~/dotfiles/nvim/configs/spell.lua ~/.config/nvim/lua/configs/
+ln -sf ~/dotfiles/nvim/plugins/cmp.lua ~/.config/nvim/lua/plugins/
+ln -sf ~/dotfiles/nvim/plugins/nvimtree.lua ~/.config/nvim/lua/plugins/
 ln -sf ~/dotfiles/nvim/plugins/noice.lua ~/.config/nvim/lua/plugins/
 echo "nvchad link created"
 
