@@ -55,6 +55,16 @@ if ! command -v zsh &> /dev/null; then
 fi
 echo "zsh installed."
 
+# Set zsh as default shell
+if [ "$SHELL" != "$(which zsh)" ]; then
+    echo "Setting zsh as default shell..."
+    if ! chsh -s "$(which zsh)"; then
+        echo "Error: failed to change default shell."
+        exit 1
+    fi
+fi
+echo "Default shell is zsh." 
+
 # Install Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Installing Oh My Zsh..."
