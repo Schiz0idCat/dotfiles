@@ -126,6 +126,7 @@ echo "lsd installed."
 
 echo ""
 
+##### EDITOR #####
 # Install Neovim
 if ! command -v nvim >/dev/null 2>&1; then
     echo "Installing Neovim..."
