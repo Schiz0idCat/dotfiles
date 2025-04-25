@@ -44,7 +44,7 @@ echo "Font $FONT installed."
 
 echo ""
 
-##### TERMINAL #####
+##### SHELL #####
 # Install zsh
 if ! command -v zsh &> /dev/null; then
     echo "Installing zsh..."
@@ -136,6 +136,19 @@ echo "lsd installed."
 
 echo ""
 
+##### TERMINAL #####
+# Install Kitty
+if ! command -v kitty >/dev/null 2>&1; then
+    echo "Installing Kitty..."
+    if ! curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin; then
+        echo "Error: failed to install Kitty. Aborting."
+        exit 1
+    fi
+fi
+echo "Kitty installed."
+
+echo ""
+
 ##### EDITOR #####
 # Install Neovim
 if ! command -v nvim >/dev/null 2>&1; then
@@ -205,6 +218,10 @@ echo "zsh link created"
 # powerlevel10k
 ln -sf ~/dotfiles/terminal/powerlevel10k/.p10k.zsh ~/
 echo "powerlevel10k link created"
+
+# kitty
+sudo ln -sf ~/.local/kitty.app/bin/kitty /usr/local/bin/
+echo "kitty link created"
 
 # nvchad
 ln -sf ~/dotfiles/nvim/spell/es.utf-8.spl ~/.config/nvim/spell/
