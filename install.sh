@@ -206,7 +206,7 @@ ln -sf ~/dotfiles/nvim/configs/spell.lua ~/.config/nvim/lua/configs/
 ln -sf ~/dotfiles/nvim/plugins/cmp.lua ~/.config/nvim/lua/plugins/
 ln -sf ~/dotfiles/nvim/plugins/nvimtree.lua ~/.config/nvim/lua/plugins/
 ln -sf ~/dotfiles/nvim/plugins/noice.lua ~/.config/nvim/lua/plugins/
-ln -sf ~/dotfiles/nvim/plugins/notify.lua ~/.config/nvim/lua/plugins/nvimtree.lua
+ln -sf ~/dotfiles/nvim/plugins/notify.lua ~/.config/nvim/lua/plugins/
 echo "nvchad link created"
 
 echo ""
