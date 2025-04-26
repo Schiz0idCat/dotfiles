@@ -221,6 +221,7 @@ echo "powerlevel10k link created"
 
 # kitty
 sudo ln -sf ~/.local/kitty.app/bin/kitty /usr/local/bin/
+sudo ln -sf ~/.local/kitty.app/bin/kitten /usr/local/bin/
 echo "kitty link created"
 
 # nvchad
