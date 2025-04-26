@@ -27,7 +27,7 @@ return {
             vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
         end)
 
-        -- 🚨 Custom hook para que el scope use el color del indent
+        -- 🚨 Custom hook scope and indent share the same color
         hooks.register(hooks.type.SCOPE_HIGHLIGHT, function(_, bufnr, scope)
             local start_row, _, _, _ = vim.treesitter.get_node_range(scope)
             local line = vim.api.nvim_buf_get_lines(bufnr, start_row, start_row + 1, false)[1]
@@ -36,7 +36,6 @@ return {
                 return 1
             end
 
-            -- Contar el número de espacios o tabs al principio de la línea
             local indent = line:match("^%s*")
             local indent_length = 0
             for i = 1, #indent do
@@ -53,7 +52,7 @@ return {
             end
 
             local level = math.floor(indent_length / indent_size) + 1
-            local num_highlights = 7 -- o #highlight si quieres hacerlo automático
+            local num_highlights = #highlight
 
             return (level - 1) % num_highlights + 1
         end)
