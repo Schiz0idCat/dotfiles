@@ -16,8 +16,7 @@ return {
         }
 
         local hooks = require "ibl.hooks"
-        -- create the highlight groups in the highlight setup hook, so they are reset
-        -- every time the colorscheme changes
+
         hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
             vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
             vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
@@ -28,9 +27,46 @@ return {
             vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
         end)
 
+        -- 🚨 Custom hook para que el scope use el color del indent
+        hooks.register(hooks.type.SCOPE_HIGHLIGHT, function(_, bufnr, scope)
+            local start_row, _, _, _ = vim.treesitter.get_node_range(scope)
+            local line = vim.api.nvim_buf_get_lines(bufnr, start_row, start_row + 1, false)[1]
+
+            if not line then
+                return 1
+            end
+
+            -- Contar el número de espacios o tabs al principio de la línea
+            local indent = line:match("^%s*")
+            local indent_length = 0
+            for i = 1, #indent do
+                if indent:sub(i, i) == "\t" then
+                    indent_length = indent_length + (vim.bo[bufnr].tabstop or 4)
+                else
+                    indent_length = indent_length + 1
+                end
+            end
+
+            local indent_size = vim.bo[bufnr].shiftwidth
+            if indent_size == 0 then
+                indent_size = vim.bo[bufnr].tabstop
+            end
+
+            local level = math.floor(indent_length / indent_size) + 1
+            local num_highlights = 7 -- o #highlight si quieres hacerlo automático
+
+            return (level - 1) % num_highlights + 1
+        end)
+
+
         require("ibl").setup {
             indent = { highlight = highlight },
+            scope = {
+                enabled = true,
+                show_start = true,
+                show_end = false,
+                highlight = highlight,
+            },
         }
     end,
 }
-
