@@ -4,36 +4,33 @@ return {
     dependencies = {
         "HiPhish/rainbow-delimiters.nvim",
     },
-    opts = {
-        indent = {
-            char = "│",
-            highlight = { "IblIndent" },
-        },
-        whitespace = {
-            highlight = { "IblWhitespace" },
-        },
-        scope = {
-            enabled = true,
-            show_start = true,
-            show_end = true,
-            highlight = {
-                "RainbowDelimiterRed",
-                "RainbowDelimiterYellow",
-                "RainbowDelimiterBlue",
-                "RainbowDelimiterOrange",
-                "RainbowDelimiterGreen",
-                "RainbowDelimiterViolet",
-                "RainbowDelimiterCyan",
-            },
-        },
-    },
-    config = function(_, opts)
-        -- Definimos los highlights básicos para las líneas de indentación
-        vim.api.nvim_set_hl(0, "IblIndent", { fg = "#3b4261" })
-        vim.api.nvim_set_hl(0, "IblWhitespace", { fg = "#3b4261" })
+    config = function()
+        local highlight = {
+            "RainbowRed",
+            "RainbowYellow",
+            "RainbowBlue",
+            "RainbowOrange",
+            "RainbowGreen",
+            "RainbowViolet",
+            "RainbowCyan",
+        }
 
-        -- Setup después de los highlights
-        require("ibl").setup(opts)
+        local hooks = require "ibl.hooks"
+        -- create the highlight groups in the highlight setup hook, so they are reset
+        -- every time the colorscheme changes
+        hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+            vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+            vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+            vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+            vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+            vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+            vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+            vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+        end)
+
+        require("ibl").setup {
+            indent = { highlight = highlight },
+        }
     end,
 }
 
