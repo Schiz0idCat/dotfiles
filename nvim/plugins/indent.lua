@@ -27,7 +27,7 @@ return {
             vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
         end)
 
-        -- 🚨 Custom hook scope and indent share the same color
+        -- Custom hook scope and indent share the same color
         hooks.register(hooks.type.SCOPE_HIGHLIGHT, function(_, bufnr, scope)
             local start_row, _, _, _ = vim.treesitter.get_node_range(scope)
             local line = vim.api.nvim_buf_get_lines(bufnr, start_row, start_row + 1, false)[1]
