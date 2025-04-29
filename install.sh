@@ -75,16 +75,15 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 echo "Oh My Zsh installed."
 
-# Install Powerlevel10k
-if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
-    echo "Installing Powerlevel10k..."
-    if ! git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-        "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"; then
-        echo "Error: failed to clone Powerlevel10k. Aborting."
+# Install Oh My Posh
+if ! command -v oh-my-posh >/dev/null 2>&1; then
+    echo "Installing Oh My Posh..."
+    if ! curl -s https://ohmyposh.dev/install.sh | bash -s; then
+        echo "Error: failed to install Oh My Posh. Aborting."
         exit 1
     fi
 fi
-echo "Powerlevel10k installed."
+echo "Oh My Posh installed."
 
 echo ""
 
@@ -214,10 +213,6 @@ echo ""
 ln -sf ~/dotfiles/terminal/zsh/.zshrc ~/
 ln -sf ~/dotfiles/terminal/zsh/aliases.zsh ~/.oh-my-zsh/custom/
 echo "zsh link created"
-
-# powerlevel10k
-ln -sf ~/dotfiles/terminal/powerlevel10k/.p10k.zsh ~/
-echo "powerlevel10k link created"
 
 # kitty
 sudo ln -sf ~/.local/kitty.app/bin/kitty /usr/local/bin/
