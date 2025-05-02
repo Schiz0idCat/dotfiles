@@ -26,6 +26,15 @@ if ! sudo apt install -y \
 fi
 echo "Dependencies for silicon installed."
 
+# Install curl
+if ! command -v curl >/dev/null 2>&1; then
+    if ! sudo apt install -y curl; then
+        echo "Error: failed to install curl. Aborting."
+        exit 1
+    fi
+fi
+echo "curl installed."
+
 echo ""
 
 ##### MEDIA #####
