@@ -248,7 +248,7 @@ echo "Node.js and npm installed."
 # Install bash-language-server
 if ! command -v bash-language-server >/dev/null 2>&1; then
     echo "Installing bash-language-server..."
-    if ! npm install -g bash-language-server; then
+    if ! sudo npm install -g bash-language-server; then
         echo "Error: failed to install bash-language-server. Aborting."
         exit 1
     fi
