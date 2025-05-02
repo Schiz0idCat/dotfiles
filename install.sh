@@ -7,6 +7,27 @@ fi
 
 echo ""
 
+# Sillicon dependecies
+if ! sudo apt install -y \
+    expat \
+    libxml2-dev \
+    pkg-config \
+    libasound2-dev \
+    libssl-dev \
+    cmake \
+    libfreetype6-dev \
+    libexpat1-dev \
+    libxcb-composite0-dev \
+    libharfbuzz-dev \
+    libfontconfig1-dev \
+    g++ > /dev/null 2>&1; then
+    echo "Error: failed to install dependencies for silicon. Aborting."
+    exit 1
+fi
+echo "Dependencies for silicon installed."
+
+echo ""
+
 ##### MEDIA #####
 # Font
 FONT="JetBrainsMono"
@@ -41,6 +62,16 @@ if ! fc-list | grep -qi "$FONT"; then
     popd > /dev/null
 fi
 echo "Font $FONT installed."
+
+echo ""
+
+##### PROGRAMMING LENGUAGES #####
+# Rust
+if ! command -v cargo >/dev/null 2>&1; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "$HOME/.cargo/env"
+fi
+echo "Rust installed."
 
 echo ""
 
@@ -205,6 +236,15 @@ if [ ! -d "$HOME/.config/nvim/spell/" ]; then
     mkdir ~/.config/nvim/spell/
 fi
 echo "Spell directory created."
+
+# Install silicon
+if ! command -v silicon >/dev/null 2>&1; then
+    if ! cargo install silicon; then
+        echo "Error: failed to install silicon. Aborting."
+        exit 1
+    fi
+fi
+echo "silicon installed."
 
 echo ""
 
