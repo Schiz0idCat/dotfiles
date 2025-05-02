@@ -234,12 +234,14 @@ echo "NvChad is already installed. Skipping."
 
 # nvchad extras
 # Install Node.js and npm
-if ! command -v nodejs >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1; then
-    echo "Installing Node.js and npm..."
-    if ! sudo apt install -y nodejs npm; then
+if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1 || [ "$(node -v | cut -d. -f1 | tr -d v)" -lt 20 ]; then
+    echo "Installing Node.js (v20+) and npm..."
+
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
+    sudo apt install -y nodejs || {
         echo "Error: failed to install Node.js or npm. Aborting."
         exit 1
-    fi
+    }
 fi
 echo "Node.js and npm installed."
 
