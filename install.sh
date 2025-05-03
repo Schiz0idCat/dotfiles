@@ -7,6 +7,7 @@ fi
 
 echo ""
 
+##### DEPENDENCIES #####
 # Sillicon dependecies
 if ! sudo apt install -y \
     expat \
@@ -26,6 +27,7 @@ if ! sudo apt install -y \
 fi
 echo "Dependencies for silicon installed."
 
+##### EXTRA COMMANDS #####
 # Install curl
 if ! command -v curl >/dev/null 2>&1; then
     if ! sudo apt install -y curl; then
@@ -34,6 +36,28 @@ if ! command -v curl >/dev/null 2>&1; then
     fi
 fi
 echo "curl installed."
+
+# Install Node.js and npm
+if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1 || [ "$(node -v | cut -d. -f1 | tr -d v)" -lt 20 ]; then
+    echo "Installing Node.js (v20+) and npm..."
+
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
+    sudo apt install -y nodejs || {
+        echo "Error: failed to install Node.js or npm. Aborting."
+        exit 1
+    }
+fi
+echo "Node.js and npm installed."
+
+echo ""
+
+##### PROGRAMMING LENGUAGES #####
+# Rust
+if ! command -v cargo >/dev/null 2>&1; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "$HOME/.cargo/env"
+fi
+echo "Rust installed."
 
 echo ""
 
@@ -71,16 +95,6 @@ if ! fc-list | grep -qi "$FONT"; then
     popd > /dev/null
 fi
 echo "Font $FONT installed."
-
-echo ""
-
-##### PROGRAMMING LENGUAGES #####
-# Rust
-if ! command -v cargo >/dev/null 2>&1; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    source "$HOME/.cargo/env"
-fi
-echo "Rust installed."
 
 echo ""
 
@@ -230,20 +244,7 @@ if [ ! -d "$HOME/.config/nvim" ]; then
     nvim --headless +"Lazy! sync" +"autocmd User LazyDone ++once lua require('mason-tool-installer').run()" +qa
     rm -rf ~/.config/nvim/.git
 fi
-echo "NvChad is already installed. Skipping."
-
-# nvchad extras
-# Install Node.js and npm
-if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1 || [ "$(node -v | cut -d. -f1 | tr -d v)" -lt 20 ]; then
-    echo "Installing Node.js (v20+) and npm..."
-
-    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
-    sudo apt install -y nodejs || {
-        echo "Error: failed to install Node.js or npm. Aborting."
-        exit 1
-    }
-fi
-echo "Node.js and npm installed."
+echo "NvChad installed."
 
 # Install bash-language-server
 if ! command -v bash-language-server >/dev/null 2>&1; then
@@ -260,6 +261,7 @@ if [ ! -d "$HOME/.config/nvim/spell/" ]; then
 fi
 echo "Spell directory created."
 
+##### OPT #####
 # Install silicon
 if ! command -v silicon >/dev/null 2>&1; then
     if ! cargo install silicon; then
