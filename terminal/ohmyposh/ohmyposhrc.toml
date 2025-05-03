@@ -5,25 +5,47 @@ final_space = true
 [palette]
   black = '#262B44'
   blue = '#4B95E9'
-  green = '#59C9A5'
+  dark_blue = '#0b006b'
+  green = '#29bd1e'
   orange = '#F07623'
-  red = '#D81E5B'
+  red = '#bd1e1e'
   white = '#E0DEF4'
   yellow = '#F8F32B'
 
 [[blocks]]
-  type = 'prompt'
-  alignment = 'left'
+  type = "prompt"
+  alignment = "left"
 
   [[blocks.segments]]
-    type = 'path'
-    style = 'diamond'
-    leading_diamond = ' '
-    trailing_diamond = ''
+    type = "path"
+    style = "powerline"
+    powerline_symbol = ""
+    foreground = "p:white"
+    background = "p:dark_blue"
+
+    [blocks.segments.properties]
+      style = "full"
 
 [[blocks]]
-  type = 'prompt'
-  alignment = 'left'
+  type = "prompt"
+  alignment = "left"
   newline = true
-  style = 'plain'
-  template = "{{ .Shell }}\n❯ "
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    foreground_template = [
+      "{{ if gt .Code 0}}p:red{{ end }}",
+      "{{ if eq .Code 0}}p:green{{ end }}",
+    ]
+    background = "transparent"
+    template = '❯'
+
+[transient_prompt]
+  foreground_template = [
+    "{{ if gt .Code 0}}p:red{{ end }}",
+    "{{ if eq .Code 0}}p:green{{ end }}",
+  ]
+  background = "transparent"
+  template = '❯'
+
