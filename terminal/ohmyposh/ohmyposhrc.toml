@@ -6,6 +6,8 @@ final_space = true
   black = '#262B44'
   blue = '#4B95E9'
   dark_blue = '#0b006b'
+  sky_blue = '#00b7ff'
+  gray = '#303030'
   green = '#29bd1e'
   orange = '#F07623'
   red = '#bd1e1e'
@@ -21,8 +23,8 @@ final_space = true
     type = "path"
     style = "powerline"
     powerline_symbol = ""
-    foreground = "p:white"
-    background = "p:dark_blue"
+    foreground = "p:sky_blue"
+    background = "p:gray"
 
     [blocks.segments.properties]
       style = "full"
