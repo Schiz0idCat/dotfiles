@@ -15,6 +15,7 @@ final_space = true
 [[blocks]]
   type = "prompt"
   alignment = "left"
+  newline = true
 
   [[blocks.segments]]
     type = "path"
@@ -34,7 +35,7 @@ final_space = true
   [[blocks.segments]]
     type = "text"
     style = "plain"
-    foreground_template = [
+    foreground_templates = [
       "{{ if gt .Code 0}}p:red{{ end }}",
       "{{ if eq .Code 0}}p:green{{ end }}",
     ]
@@ -42,10 +43,10 @@ final_space = true
     template = '❯'
 
 [transient_prompt]
-  foreground_template = [
+  foreground_templates = [
     "{{ if gt .Code 0}}p:red{{ end }}",
     "{{ if eq .Code 0}}p:green{{ end }}",
   ]
   background = "transparent"
-  template = '❯'
+  template = '❯ '
 
