@@ -8,8 +8,8 @@ final_space = true
   dark_blue = '#0b006b'
   sky_blue = '#00b7ff'
   gray = '#303030'
-  green = '#29bd1e'
-  orange = '#F07623'
+  green = '#5dd003'
+  orange = '#ff810a'
   red = '#bd1e1e'
   white = '#E0DEF4'
   yellow = '#F8F32B'
@@ -17,17 +17,40 @@ final_space = true
 [[blocks]]
   type = "prompt"
   alignment = "left"
-  newline = true
+
+  [[blocks.segments]]
+    type = "text"
+    style = "diamond"
+    leading_diamond = "\uE0B2"
+    trailing_diamond = ""
+    foreground = "p:orange"
+    background = "p:gray"  # color por defecto (no root)
+    background_templates = [
+      "{{ if .Root }}p:red{{ end }}"
+    ]
+    template = " {{ .UserName }} "
 
   [[blocks.segments]]
     type = "path"
-    style = "powerline"
-    powerline_symbol = ""
+    style = "diamond"
+    leading_diamond = "\uE0B2"
+    trailing_diamond = ""
     foreground = "p:sky_blue"
     background = "p:gray"
 
     [blocks.segments.properties]
       style = "full"
+ 
+  [[blocks.segments]]
+    type = "git"
+    style = "diamond"
+    trailing_diamond = ""
+    leading_diamond = "\uE0B2"
+    foreground = "p:green"
+    background = "p:gray"
+
+    [blocks.segments.properties]
+      branch_icon = " "
 
 [[blocks]]
   type = "prompt"
@@ -51,4 +74,3 @@ final_space = true
   ]
   background = "transparent"
   template = '❯ '
-
