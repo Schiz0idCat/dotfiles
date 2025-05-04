@@ -16,7 +16,8 @@ final_space = true
   type = "prompt"
   alignment = "left"
 
-  [[blocks.segments]] # USER
+  [[blocks.segments]] # USER (WIDTH >= 95)
+    min_width = 95
     type = "text"
     style = "diamond"
     leading_diamond = "\uE0B2"
@@ -31,7 +32,24 @@ final_space = true
     ]
     template = " {{ if .Root }}󰈸 {{ else }}󰄛 {{ end }}{{ .UserName }} "
 
-  [[blocks.segments]] # PATH
+  [[blocks.segments]] # USER (WIDTH <= 94)
+    max_width = 94
+    type = "text"
+    style = "diamond"
+    leading_diamond = "\uE0B2"
+    trailing_diamond = ""
+    background = "p:gray"
+    foreground = "p:orange"
+    background_templates = [
+      "{{ if .Root }}p:red{{ end }}",
+    ]
+    foreground_templates = [
+      "{{if .Root }}p:black{{ end }}"
+    ]
+    template = " {{ if .Root }}󰈸 {{ else }}󰄛 {{ end }} "
+
+  [[blocks.segments]] # PATH (WIDTH >= 94)
+    min_width = 94
     type = "path"
     style = "diamond"
     leading_diamond = "\uE0B2"
@@ -42,8 +60,22 @@ final_space = true
 
     [blocks.segments.properties]
       style = "full"
- 
-  [[blocks.segments]] # GIT
+
+  [[blocks.segments]] # PATH (WIDTH <= 93)
+    max_width = 93
+    type = "path"
+    style = "diamond"
+    leading_diamond = "\uE0B2"
+    trailing_diamond = ""
+    foreground = "p:sky_blue"
+    background = "p:gray"
+    template = "   {{ .Path }} "
+
+    [blocks.segments.properties]
+      style = "letter"
+
+  [[blocks.segments]] # GIT (WIDTH >= 95)
+    min_width = 95
     type = "git"
     style = "diamond"
     trailing_diamond = ""
@@ -58,11 +90,28 @@ final_space = true
       fetch_upstream_icon = true
       show_status = true
 
+  [[blocks.segments]] # GIT (WIDTH <= 94)
+    max_width = 94
+    type = "git"
+    style = "diamond"
+    trailing_diamond = ""
+    leading_diamond = "\uE0B2"
+    foreground = "p:green"
+    background = "p:gray"
+    template = "  {{ if gt .Ahead 0 }}  {{ .Ahead }}{{ end }}{{ if gt .Behind 0 }}  {{ .Behind }}{{ end }}{{ if or .Working.Changed .Staging.Changed }}{{ if gt .Working.Modified 0 }} 󰲶 {{ .Working.Modified }}{{ end }}{{ if gt .Staging.Modified 0 }} 󰷬 {{ .Staging.Modified }}{{ end }}{{ if gt .Staging.Added 0 }}  {{ .Staging.Added }}{{ end }}{{ if gt .Working.Deleted 0 }}  {{ .Working.Deleted }}{{ end }}{{ if gt .Working.Untracked 0 }}  {{ .Working.Untracked }}{{ end }}{{ end }} "
+
+    [blocks.segments.properties]
+      fetch_status = true
+      fetch_upstream_icon = true
+      show_status = true
+
+
 [[blocks]] # RIGHT BLOCK
   type = "prompt"
   alignment = "right"
 
-  [[blocks.segments]] # TIME
+  [[blocks.segments]] # TIME (WIDTH >= 96)
+    min_width = 96
     type = "executiontime"
     style = "diamond"
     leading_diamond = "\uE0B2"
