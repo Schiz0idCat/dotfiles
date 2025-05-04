@@ -5,6 +5,7 @@ final_space = true
 [palette] # GLOBAL COLORS
   sky_blue = '#00b7ff'
   gray = '#303030'
+  black = '#000000'
   green = '#5dd003'
   orange = '#ff7919'
   red = '#bd1e1e'
@@ -20,10 +21,13 @@ final_space = true
     style = "diamond"
     leading_diamond = "\uE0B2"
     trailing_diamond = ""
-    foreground = "p:orange"
     background = "p:gray"
+    foreground = "p:orange"
     background_templates = [
-      "{{ if .Root }}p:red{{ end }}"
+      "{{ if .Root }}p:red{{ end }}",
+    ]
+    foreground_templates = [
+      "{{if .Root }}p:black{{ end }}"
     ]
     template = " {{ if .Root }}󰈸 {{ else }}󰄛 {{ end }}{{ .UserName }} "
 
