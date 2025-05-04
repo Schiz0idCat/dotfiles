@@ -2,10 +2,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 version = 3
 final_space = true
 
-[palette]
-  black = '#262B44'
-  blue = '#4B95E9'
-  dark_blue = '#0b006b'
+[palette] # GLOBAL COLORS
   sky_blue = '#00b7ff'
   gray = '#303030'
   green = '#5dd003'
@@ -14,7 +11,7 @@ final_space = true
   white = '#E0DEF4'
   yellow = '#F8F32B'
 
-[[blocks]]
+[[blocks]] # LEFT BLOCK
   type = "prompt"
   alignment = "left"
 
@@ -53,29 +50,31 @@ final_space = true
     [blocks.segments.properties]
       branch_icon = " "
 
-  [[blocks]]
-  type = "rprompt"
-  overflow = "hidden"
+[[blocks]] # RIGHT BLOCK
+  type = "prompt"
+  alignment = "right"
 
-    [[blocks.segments]] # TIME
-      type = "executiontime"
-      style = "diamond"
-      leading_diamond = "\uE0B2"
-      trailing_diamond = ""
-      background = "p:gray"
-      foreground = "p:yellow"
-      template = " 󱦟 {{ .FormattedMs }} "
+  [[blocks.segments]] # TIME
+    type = "executiontime"
+    style = "diamond"
+    leading_diamond = "\uE0B2"
+    trailing_diamond = ""
+    background = "p:gray"
+    foreground = "p:yellow"
+    template = " 󱦟 {{ .FormattedMs }} "
 
-      [blocks.segments.properties]
+    [blocks.segments.properties]
       threshold = 5000
       style = "round"
 
-[[blocks]]
+# NEW LINE
+
+[[blocks]] # LEFT BLOCK
   type = "prompt"
   alignment = "left"
   newline = true
 
-  [[blocks.segments]]
+  [[blocks.segments]] # INPUT BLOCK
     type = "text"
     style = "plain"
     foreground_templates = [
@@ -84,6 +83,8 @@ final_space = true
     ]
     background = "transparent"
     template = '❯'
+
+# PREVIOUS PROMPTS
 
 [transient_prompt]
   foreground_templates = [
