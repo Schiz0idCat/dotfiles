@@ -9,7 +9,7 @@ final_space = true
   sky_blue = '#00b7ff'
   gray = '#303030'
   green = '#5dd003'
-  orange = '#FF5E00'
+  orange = '#ff7919'
   red = '#bd1e1e'
   white = '#E0DEF4'
   yellow = '#F8F32B'
@@ -18,30 +18,31 @@ final_space = true
   type = "prompt"
   alignment = "left"
 
-  [[blocks.segments]]
+  [[blocks.segments]] # USER
     type = "text"
     style = "diamond"
     leading_diamond = "\uE0B2"
     trailing_diamond = ""
     foreground = "p:orange"
-    background = "p:gray"  # color por defecto (no root)
+    background = "p:gray"
     background_templates = [
       "{{ if .Root }}p:red{{ end }}"
     ]
-    template = " {{ .UserName }} "
+    template = " {{ if .Root }}󰈸 {{ else }}󰄛 {{ end }}{{ .UserName }} "
 
-  [[blocks.segments]]
+  [[blocks.segments]] # PATH
     type = "path"
     style = "diamond"
     leading_diamond = "\uE0B2"
     trailing_diamond = ""
     foreground = "p:sky_blue"
     background = "p:gray"
+    template = "   {{ .Path }} "
 
     [blocks.segments.properties]
       style = "full"
  
-  [[blocks.segments]]
+  [[blocks.segments]] # GIT
     type = "git"
     style = "diamond"
     trailing_diamond = ""
@@ -51,6 +52,23 @@ final_space = true
 
     [blocks.segments.properties]
       branch_icon = " "
+
+  [[blocks]]
+  type = "rprompt"
+  overflow = "hidden"
+
+    [[blocks.segments]] # TIME
+      type = "executiontime"
+      style = "diamond"
+      leading_diamond = "\uE0B2"
+      trailing_diamond = ""
+      background = "p:gray"
+      foreground = "p:yellow"
+      template = " 󱦟 {{ .FormattedMs }} "
+
+      [blocks.segments.properties]
+      threshold = 5000
+      style = "round"
 
 [[blocks]]
   type = "prompt"
