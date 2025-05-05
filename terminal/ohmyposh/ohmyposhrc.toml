@@ -82,7 +82,7 @@ final_space = true
     leading_diamond = "\uE0B2"
     foreground = "p:green"
     background = "p:gray"
-    template = " {{ .HEAD }}{{ if gt .Ahead 0 }}  {{ .Ahead }}{{ end }}{{ if gt .Behind 0 }}  {{ .Behind }}{{ end }}{{ if or .Working.Changed .Staging.Changed }}{{ if gt .Working.Modified 0 }} 󰲶 {{ .Working.Modified }}{{ end }}{{ if gt .Staging.Modified 0 }} 󰷬 {{ .Staging.Modified }}{{ end }}{{ if gt .Staging.Added 0 }}  {{ .Staging.Added }}{{ end }}{{ if gt .Working.Deleted 0 }}  {{ .Working.Deleted }}{{ end }}{{ if gt .Working.Untracked 0 }}  {{ .Working.Untracked }}{{ end }}{{ end }} "
+    template = " {{ .HEAD }}{{ if gt .Ahead 0 }}  {{ .Ahead }}{{ end }}{{ if gt .Behind 0 }}  {{ .Behind }}{{ end }}{{ if or .Working.Changed .Staging.Changed }}{{ if gt .Working.Modified 0 }} 󰲶 {{ .Working.Modified }}{{ end }}{{ if gt .Staging.Modified 0 }} 󰷬 {{ .Staging.Modified }}{{ end }}{{ if gt .Staging.Added 0 }}  {{ .Staging.Added }}{{ end }}{{ if gt .Working.Deleted 0 }}  {{ .Working.Deleted }}{{ end }}{{ if gt .Working.Untracked 0 }} 󱔢 {{ .Working.Untracked }}{{ end }}{{ end }} "
 
     [blocks.segments.properties]
       branch_icon = " "
@@ -98,7 +98,7 @@ final_space = true
     leading_diamond = "\uE0B2"
     foreground = "p:green"
     background = "p:gray"
-    template = "  {{ if gt .Ahead 0 }}  {{ .Ahead }}{{ end }}{{ if gt .Behind 0 }}  {{ .Behind }}{{ end }}{{ if or .Working.Changed .Staging.Changed }}{{ if gt .Working.Modified 0 }} 󰲶 {{ .Working.Modified }}{{ end }}{{ if gt .Staging.Modified 0 }} 󰷬 {{ .Staging.Modified }}{{ end }}{{ if gt .Staging.Added 0 }}  {{ .Staging.Added }}{{ end }}{{ if gt .Working.Deleted 0 }}  {{ .Working.Deleted }}{{ end }}{{ if gt .Working.Untracked 0 }}  {{ .Working.Untracked }}{{ end }}{{ end }} "
+    template = "  {{ if gt .Ahead 0 }}  {{ .Ahead }}{{ end }}{{ if gt .Behind 0 }}  {{ .Behind }}{{ end }}{{ if or .Working.Changed .Staging.Changed }}{{ if gt .Working.Modified 0 }} 󰲶 {{ .Working.Modified }}{{ end }}{{ if gt .Staging.Modified 0 }} 󰷬 {{ .Staging.Modified }}{{ end }}{{ if gt .Staging.Added 0 }}  {{ .Staging.Added }}{{ end }}{{ if gt .Working.Deleted 0 }}  {{ .Working.Deleted }}{{ end }}{{ if gt .Working.Untracked 0 }} 󱔢 {{ .Working.Untracked }}{{ end }}{{ end }} "
 
     [blocks.segments.properties]
       fetch_status = true
