@@ -225,7 +225,6 @@ if ! command -v nvim >/dev/null 2>&1; then
 
     echo "Installing Neovim to /opt/nvim..."
     sudo mv nvim-linux-x86_64 /opt/nvim
-    sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 
     popd >/dev/null
     rm -rf "$TEMP_DIR"
@@ -278,6 +277,10 @@ echo ""
 ln -sf ~/dotfiles/terminal/zsh/.zshrc ~/
 ln -sf ~/dotfiles/terminal/zsh/aliases.zsh ~/.oh-my-zsh/custom/
 echo "zsh link created"
+
+# nvim
+sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
+echo "nvim link created"
 
 # kitty
 sudo ln -sf ~/.local/kitty.app/bin/kitty /usr/local/bin/
