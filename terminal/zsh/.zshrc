@@ -7,11 +7,13 @@ plugins=(
 	copyfile
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+    fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
 
 eval "$(oh-my-posh init zsh --config $HOME/dotfiles/terminal/ohmyposh/ohmyposhrc.toml)"
+eval "$(fzf --zsh)"
 
 function precmd() {
   if [[ -n "$__ZSH_PROMPT_STARTED" ]]; then

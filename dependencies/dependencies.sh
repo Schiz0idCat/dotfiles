@@ -51,4 +51,5 @@ shell=(
 shellExtras=(
     "$shellPluginsDir/autosuggestions.sh"
     "$shellPluginsDir/syntax-highlighting.sh"
+    "$shellPluginsDir/fzf-tab.sh"
 )
