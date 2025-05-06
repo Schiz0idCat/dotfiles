@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export CARGO_HOME="$HOME/.cargo"
+export PATH="$CARGO_HOME/bin:$PATH"
+
 if ! command -v silicon >/dev/null 2>&1; then
     echo "Installig silicon..."
 
