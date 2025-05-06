@@ -71,14 +71,6 @@ installDependencies "${fonts[@]}"
 
 echo ""
 
-echo "#==========>   TERMINAL   <==========#"
-installDependencies "${terminal[@]}"
-
-makeLink "${terminalLn[@]}"
-echo -e "\nTerminal config setup."
-
-echo ""
-
 echo "#==========>   SHELL   <==========#"
 installDependencies "${shell[@]}"
 
@@ -87,6 +79,12 @@ installExtraDependencies "${shellExtras[@]}"
 
 makeLink "${shellLn[@]}"
 echo -e "\nShell config setup."
+
+echo "#==========>   TERMINAL   <==========#"
+installDependencies "${terminal[@]}"
+
+makeLink "${terminalLn[@]}"
+echo -e "\nTerminal config setup."
 
 echo ""
 
