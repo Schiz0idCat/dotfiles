@@ -41,7 +41,7 @@ sudo apt update
 source "./dependencies/dependencies.sh"
 source "./dependencies/links.sh"
 
-echo "Starting dotfiles installation..."
+echo -e "\nStarting dotfiles installation..."
 
 echo ""
 
