@@ -36,6 +36,7 @@ fonts=(
 
 terminal=(
     "$terminalDir/kitty.sh"
+    "$terminalDir/ohmyposh.sh"
 )
 
 shell=(
