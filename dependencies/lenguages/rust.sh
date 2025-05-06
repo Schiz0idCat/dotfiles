@@ -9,6 +9,8 @@ if ! command -v cargo >/dev/null 2>&1; then
     fi
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    source "$HOME/.cargo/env"
+
+    export CARGO_HOME="$HOME/.cargo"
+    export PATH="$CARGO_HOME/bin:$PATH"
 fi
 echo "Rust installed."
