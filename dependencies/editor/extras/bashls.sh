@@ -5,7 +5,7 @@ if ! command -v bash-language-server >/dev/null 2>&1; then
 
     if ! command -v npm >/dev/null 2>&1; then
         chmod +x ~/dotfiles/dependencies/tools/node_npm.sh
-        bash/tools/node_npm.sh
+        bash ~dotfiles/dependencies/tools/node_npm.sh
     fi
 
     if ! sudo npm install -g bash-language-server; then
