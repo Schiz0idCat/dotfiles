@@ -24,6 +24,7 @@ function precmd() {
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
+source <(fzf --zsh)
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
