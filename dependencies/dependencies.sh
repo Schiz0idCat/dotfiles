@@ -20,6 +20,7 @@ editor=(
 )
 
 editorExtras=(
+    "$editorExtrasDir/clangd.sh"
     "$editorExtrasDir/bashls.sh"
 )
 
