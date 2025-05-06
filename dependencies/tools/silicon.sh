@@ -17,7 +17,7 @@ if ! command -v silicon >/dev/null 2>&1; then
         libxcb-composite0-dev \
         libharfbuzz-dev \
         libfontconfig1-dev \
-        g++ > /dev/null 2>&1
+        g++
 
     echo "Dependencies installed."
 
