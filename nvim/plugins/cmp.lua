@@ -26,12 +26,6 @@ return {
                 name = "path",  -- path autocompletion
                 max_item_count = 5, -- max suggestions
             },
-            {
-                name = "buffer",
-                option = {
-                    get_bufnrs = vim.api.nvim_list_bufs
-                },
-            }
         }
         return opts
     end,
