@@ -17,8 +17,8 @@ if ! fc-list | grep -qi "$FONT"; then
     }
 
     if ! command -v curl >/dev/null 2>&1; then
-        chmod +x ../tools/curl.sh
-        bash ../tools/curl.sh        
+        chmod +x ~/dotfiles/dependencies/tools/curl.sh  
+        bash ~/dotfiles/dependencies/tools/curl.shell
     fi
 
     echo "Downloading $FONT Nerd Font..."

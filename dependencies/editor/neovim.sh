@@ -10,8 +10,8 @@ if ! command -v nvim >/dev/null 2>&1; then
     fi
 
     if ! command -v curl >/dev/null 2>&1; then
-        chmod +x ../tools/curl.sh
-        bash ../tools/curl.sh        
+        chmod +x ~/dotfiles/dependencies/tools/curl.sh
+        bash ~/dotfiles/dependencies/tools/curl.sh
     fi
 
     if ! curl -LO https://github.com/neovim/neovim/releases/download/v0.11.0/nvim-linux-x86_64.tar.gz; then

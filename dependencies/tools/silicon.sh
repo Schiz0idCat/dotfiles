@@ -22,8 +22,8 @@ if ! command -v silicon >/dev/null 2>&1; then
     echo "Dependencies installed."
 
     if ! command -v cargo >/dev/null 2>&1; then
-        chmod +x ../lenguages/rust.sh
-        bash ../lenguages/rust.sh
+        chmod +x ~/dotfiles/dependencies/lenguages/rust.sh 
+        bash ~/dotfiles/dependencies/lenguages/rust.sh
     fi 
 
     if ! cargo install silicon; then

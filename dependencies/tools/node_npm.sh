@@ -4,8 +4,8 @@ if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1 || [ "$
     echo "Installing node and npm..."
 
     if ! command -v curl >/dev/null 2>&1; then
-        chmod +x ../tools/curl.sh
-        bash ../tools/curl.sh        
+        chmod +x ~/dotfiles/dependencies/tools/curl.sh 
+        bash ~/dotfiles/dependencies/tools/curl.sh
     fi
 
     curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
