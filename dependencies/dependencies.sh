@@ -10,6 +10,7 @@ shellDir="dependencies/shell"
 shellPluginsDir="$shellDir/plugins"
 
 lenguages=(
+    "$lenguagesDir/gcc.sh"
     "$lenguagesDir/rust.sh"
 )
 
