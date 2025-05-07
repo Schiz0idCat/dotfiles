@@ -27,3 +27,4 @@ alias fzf="fzf --style full \
     --color 'list-border:#669966,list-label:#99cc99' \
     --color 'input-border:#996666,input-label:#ffcccc' \
     --color 'header-border:#6699cc,header-label:#99ccff'"
+alias nvimfuz='nvim $(fzf -m)'
