@@ -26,6 +26,7 @@ editorExtras=(
 
 tools=(
     "$toolsDir/curl.sh"
+    "$toolsDir/fd.sh"
     "$toolsDir/bat.sh"
     "$toolsDir/lsd.sh"
     "$toolsDir/fzf.sh"
