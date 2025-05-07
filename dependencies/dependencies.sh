@@ -31,6 +31,7 @@ tools=(
     "$toolsDir/lsd.sh"
     "$toolsDir/fzf.sh"
     "$toolsDir/node_npm.sh"
+    "$toolsDir/yazi.sh"
     "$toolsDir/silicon.sh"
 )
 
