@@ -11,7 +11,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
 eval "$(oh-my-posh init zsh --config $HOME/dotfiles/terminal/ohmyposh/ohmyposhrc.toml)"
 eval "$(fzf --zsh)"
 
@@ -24,7 +23,6 @@ function precmd() {
 
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
-source <(fzf --zsh)
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -37,5 +35,54 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
 
+source <(fzf --zsh)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
+export FZF_CTRL_T_OPTS='
+  --preview "batcat --color=always --style=numbers {}"
+  --style full
+  --bind "result:transform-list-label:\
+    if [[ - \$FZF_QUERY ]]; then \
+      echo \" \$FZF_MATCH_COUNT items \"; \
+    else \
+      echo \" \$FZF_MATCH_COUNT matches for [\$FZF_QUERY] \"; \
+    fi"
+  --bind "focus:transform-preview-label:[[ -n {} ]] && printf \" %s \" {}"
+  --bind "focus:+transform-header:file --brief {} || echo \"No file selected\""
+  --bind "ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)"
+  --color "border:#aaaaaa,label:#cccccc"
+  --color "preview-border:#e6c87c,preview-label:#fff0b3"
+  --color "list-border:#669966,list-label:#99cc99"
+  --color "input-border:#996666,input-label:#ffcccc"
+  --color "header-border:#6699cc,header-label:#99ccff"'
+export FZF_CTRL_R_OPTS='
+  --reverse
+  --height=40%
+  --prompt="Hist > "
+  --header="󰙅  Search in the commands history"
+  --info=inline
+  --border
+  --color="border:#669966,list-label:#99cc99"
+  --color="prompt:#ffcc00,pointer:#ffcc00"
+  --color="marker:#6699cc,header-label:#99ccff"
+  --color="fg+:#ffffff,bg+:#333333"
+  --color="header:#99ccff"
+  --bind "change:top"
+  --bind "ctrl-d:toggle-sort"
+  --bind "ctrl-r:reload(sleep 1; history -n)"
+'
+export FZF_ALT_C_OPTS='
+  --reverse
+  --height=40%
+  --prompt="Dir > "
+  --header="  select a directory"
+  --info=inline
+  --border
+  --color="border:#aaaaaa,label:#cccccc"
+  --color="prompt:#ffcc00,pointer:#ffcc00"
+  --color="marker:#ffcc00,spinner:#cc9966"
+  --color="fg+:#ffffff,bg+:#333333"
+  --color="header:#99ccff"
+  --bind "change:top"
+  --bind "alt-c:reload(fzf --preview '/usr/bin/lsd')"
+'
