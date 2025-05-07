@@ -1,6 +1,14 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 
+function precmd() {
+  if [[ -n "$__ZSH_PROMPT_STARTED" ]]; then
+    echo
+  fi
+  __ZSH_PROMPT_STARTED=true
+}
+
+#=====> OH MY ZSH <=====#
 plugins=(
 	git
 	sudo
@@ -11,16 +19,11 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+#=====> OHMYPOSH <=====#
 eval "$(oh-my-posh init zsh --config $HOME/dotfiles/terminal/ohmyposh/ohmyposhrc.toml)"
-eval "$(fzf --zsh)"
 
-function precmd() {
-  if [[ -n "$__ZSH_PROMPT_STARTED" ]]; then
-    echo
-  fi
-  __ZSH_PROMPT_STARTED=true
-}
-
+#=====> HISTORY <=====#
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
 
@@ -28,16 +31,23 @@ HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
+
 setopt appendhistory
 setopt sharehistory
-setopt hist_ignore_space
+setopt hist_ignore_space # it doesn't work, fix it later
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
 
+#=====> FZF <=====#
+
+eval "$(fzf --zsh)"
+
 source <(fzf --zsh)
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
+
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_CTRL_T_OPTS='
   --preview "batcat --color=always --style=numbers {}"
@@ -71,8 +81,7 @@ export FZF_CTRL_R_OPTS='
   --color="input-border:#996666,input-label:#ffcccc"
   --bind "change:top"
   --bind "ctrl-d:toggle-sort"
-  --bind "ctrl-r:reload(sleep 1; history -n)"
-'
+  --bind "ctrl-r:reload(sleep 1; history -n)"'
 export FZF_ALT_C_OPTS='
   --reverse
   --height=70%
@@ -87,5 +96,4 @@ export FZF_ALT_C_OPTS='
   --color="header:#99ccff,header-label:#99ccff"
   --color="preview-border:#e6c87c,preview-label:#fff0b3"
   --color="input-border:#996666,input-label:#ffcccc"
-  --bind "change:top"
-'
+  --bind "change:top"'
