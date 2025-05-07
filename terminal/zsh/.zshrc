@@ -38,6 +38,7 @@ setopt hist_find_no_dups
 source <(fzf --zsh)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
+export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_CTRL_T_OPTS='
   --preview "batcat --color=always --style=numbers {}"
   --style full
