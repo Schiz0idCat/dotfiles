@@ -57,14 +57,30 @@ return {
             return (level - 1) % num_highlights + 1
         end)
 
-
         require("ibl").setup {
-            indent = { highlight = highlight },
+            indent = {
+                highlight = highlight,
+            },
             scope = {
                 enabled = true,
                 show_start = true,
                 show_end = false,
                 highlight = highlight,
+                include = {
+                    node_type = {
+                        ["*"] = {
+                            "if_statement",
+                            "else_clause",
+                            "function_definition",
+                            "for_statement",
+                            "while_statement",
+                            "switch_statement",
+                            "block",
+                            "compound_statement",
+                            "scoped_block",
+                        },
+                    },
+                },
             },
         }
     end,
