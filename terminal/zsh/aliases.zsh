@@ -27,5 +27,5 @@ alias fzf="fzf --reverse --style full \
     --color 'list-border:#669966,list-label:#99cc99' \
     --color 'input-border:#996666,input-label:#ffcccc' \
     --color 'header-border:#6699cc,header-label:#99ccff'"
-alias fnvim='selection=$(fzf -m); [ -n "$selection" ] && nvim $selection'
+alias fnvim='selection=$(find $HOME -type f | fzf -m); [ -n "$selection" ] && nvim $selection'
 alias fcd='selection=$(find "$HOME" -type d | fzf --no-preview --preview "lsd -l --color=always --blocks permission,user,group,name {}"); [ -n "$selection" ] && cd "$selection"'
