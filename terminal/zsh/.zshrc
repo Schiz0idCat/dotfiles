@@ -8,6 +8,11 @@ function precmd() {
   __ZSH_PROMPT_STARTED=true
 }
 
+#=====> ZSH <=====#
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
+
 #=====> OH MY ZSH <=====#
 plugins=(
 	git
@@ -40,13 +45,9 @@ setopt hist_save_no_dups
 setopt hist_find_no_dups
 
 #=====> FZF <=====#
-
 eval "$(fzf --zsh)"
 
 source <(fzf --zsh)
-
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
 
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_CTRL_T_OPTS='
