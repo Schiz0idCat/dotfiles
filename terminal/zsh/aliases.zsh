@@ -1,5 +1,8 @@
+#=====> cat <=====#
 alias cat='batcat'
+alias catdiff='git rev-parse --is-inside-work-tree &>/dev/null && cat --diff $(git diff --name-only --relative --diff-filter=d)'
 
+#=====> ls <=====#
 alias ls='lsd'
 alias ll='lsd -l'
 alias la='lsd -a'
@@ -9,8 +12,10 @@ alias ltl='lsd --tree -l'
 alias lta='lsd --tree -a'
 alias ltla='lsd --tree -la'
 
+#=====> browser <=====#
 alias brave='brave-browser'
 
+#=====> fzf <=====#
 alias fzf="fzf --reverse --style full \
     --preview 'batcat --color=always --style=numbers {}' \
     --bind \"result:transform-list-label:\
@@ -27,5 +32,10 @@ alias fzf="fzf --reverse --style full \
     --color 'list-border:#669966,list-label:#99cc99' \
     --color 'input-border:#996666,input-label:#ffcccc' \
     --color 'header-border:#6699cc,header-label:#99ccff'"
+
+#=====> editor <=====#
 alias fnvim='selection=$(find $HOME -type f | fzf -m); [ -n "$selection" ] && nvim $selection'
+alias nvimdiff='git rev-parse --is-inside-work-tree &>/dev/null && nvim $(git diff --name-only)'
+
+#=====> cd <=====#
 alias fcd='selection=$(find "$HOME" -type d | fzf --no-preview --preview "lsd -l --color=always --blocks permission,user,group,name {}"); [ -n "$selection" ] && cd "$selection"'
