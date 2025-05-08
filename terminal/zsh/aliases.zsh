@@ -11,7 +11,7 @@ alias ltla='lsd --tree -la'
 
 alias brave='brave-browser'
 
-alias fzf="fzf --style full \
+alias fzf="fzf --reverse --style full \
     --preview 'batcat --color=always --style=numbers {}' \
     --bind \"result:transform-list-label:\
         if [[ - \$FZF_QUERY ]]; then \
@@ -27,4 +27,5 @@ alias fzf="fzf --style full \
     --color 'list-border:#669966,list-label:#99cc99' \
     --color 'input-border:#996666,input-label:#ffcccc' \
     --color 'header-border:#6699cc,header-label:#99ccff'"
-alias nvimfuz='nvim $(fzf -m)'
+alias fnvim='selection=$(fzf -m); [ -n "$selection" ] && nvim $selection'
+alias fcd='selection=$(find "$HOME" -type d | fzf --no-preview --preview "lsd -l --color=always --blocks permission,user,group,name {}"); [ -n "$selection" ] && cd "$selection"'
