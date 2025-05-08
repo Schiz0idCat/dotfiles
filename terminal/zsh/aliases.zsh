@@ -37,3 +37,6 @@ alias fnvim='selection=$(find $HOME -type f | fzf -m); [ -n "$selection" ] && nv
 
 #=====> cd <=====#
 alias fcd='selection=$(find "$HOME" -type d | fzf --no-preview --preview "lsd -l --color=always --blocks permission,user,group,name {}"); [ -n "$selection" ] && cd "$selection"'
+
+#=====> git <=====#
+alias lgit='lazygit'
