@@ -1,6 +1,5 @@
 #=====> cat <=====#
 alias cat='batcat'
-alias catdiff='git rev-parse --is-inside-work-tree &>/dev/null && cat --diff $(git diff --name-only --relative --diff-filter=d)'
 
 #=====> ls <=====#
 alias ls='lsd'
@@ -35,7 +34,6 @@ alias fzf="fzf --reverse --style full \
 
 #=====> editor <=====#
 alias fnvim='selection=$(find $HOME -type f | fzf -m); [ -n "$selection" ] && nvim $selection'
-alias nvimdiff='git rev-parse --is-inside-work-tree &>/dev/null && nvim $(git diff --name-only)'
 
 #=====> cd <=====#
 alias fcd='selection=$(find "$HOME" -type d | fzf --no-preview --preview "lsd -l --color=always --blocks permission,user,group,name {}"); [ -n "$selection" ] && cd "$selection"'
