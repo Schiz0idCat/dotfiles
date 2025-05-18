@@ -1,7 +1,7 @@
 #!/bin/bash
 
-set -e  # Salir al primer error
-set -u  # Error si se usan variables no definidas
+set -e
+set -u
 
 installDependencies() {
     local scripts=("$@")
