@@ -16,7 +16,6 @@ lenguages=(
 
 editor=(
     "$editorDir/neovim.sh"
-    "$editorDir/nvchad.sh"
 )
 
 editorExtras=(
