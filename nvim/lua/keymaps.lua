@@ -40,20 +40,6 @@ map("n", "<leader>gf", function()
 end, { desc = "Apply format" })
 
 ---------->   BUFFERLINE    <----------
-map('n', '<leader>rt', function()
-  local name = vim.fn.input('Rename tab: ')
-  if name ~= '' then
-    local tabnr = vim.fn.tabpagenr()
-    local full_name = string.format('%d. %s', tabnr, name)
-    vim.cmd('BufferLineTabRename ' .. vim.fn.fnameescape(full_name))
-  end
-end, { desc = "Tab rename" })
-
 for i = 1, 9 do
   map('n', '<leader>' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>', { desc = "[1-9] go to buffer" })
-end
-
-local tab_numbers = { '!', '"', '#', '$', '%', '&', '/', '(', ')' }
-for i, key in ipairs(tab_numbers) do
-  map('n', '<leader>' .. key, ':tabnext ' .. i .. '<CR>', { desc = "[!-)] go to tab" })
 end
