@@ -2,7 +2,7 @@
 
 editorLn=(
    "/opt/nvim/bin/nvim:/usr/local/bin/nvim:SUDO"
-   "~/dotfiles/nvim:~/.config/nvim"
+   "~/dotfiles/nvim:~/.config/"
 )
 
 terminalLn=(
