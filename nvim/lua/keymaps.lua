@@ -43,3 +43,7 @@ end, { desc = "Apply format" })
 for i = 1, 9 do
   map('n', '<leader>' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>', { desc = "[1-9] go to buffer" })
 end
+
+---------->   git   <----------
+map("n", "<leader>gp", ":Gitsigns preview_hunk_inline<CR>", { desc = "show git changes" })
+map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "toggle blame" })
