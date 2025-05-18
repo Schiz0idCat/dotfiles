@@ -16,6 +16,7 @@ opt.signcolumn = "yes"
 opt.scrolloff = 10
 
 ----------> DIAGNOSTIC <----------
+-- icons
 local signs = {
     Error = "",
     Warn  = "",
@@ -28,5 +29,31 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-----------> OTHERS <----------
-opt.termguicolors = true
+-- dinamic diagnostics
+vim.diagnostic.config({
+    underline = true,
+    signs = true,
+    virtual_text = false,
+    virtual_lines = true,
+    update_in_insert = true,
+})
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+    pattern = "*",
+    callback = function()
+        local new_mode = vim.fn.mode()
+        -- while normal mode
+        if new_mode == "n" then
+            vim.diagnostic.config({
+                virtual_lines = true,
+                virtual_text = false,
+            })
+        -- while any other mode
+        else
+            vim.diagnostic.config({
+                virtual_lines = false,
+                virtual_text = false,
+            })
+        end
+    end,
+})
