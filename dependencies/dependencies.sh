@@ -25,6 +25,7 @@ editorExtras=(
 
 tools=(
     "$toolsDir/curl.sh"
+    "$toolsDir/wget.sh"
     "$toolsDir/fd.sh"
     "$toolsDir/bat.sh"
     "$toolsDir/lsd.sh"
