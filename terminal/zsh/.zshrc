@@ -101,3 +101,6 @@ export FZF_ALT_C_OPTS='
 
 #=====> YAZI <=====#
 export EDITOR='nvim'
+
+#=====> ZOXIDE <=====#
+eval "$(zoxide init --cmd cd zsh)"

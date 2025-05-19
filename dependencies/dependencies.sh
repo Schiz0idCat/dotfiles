@@ -28,6 +28,7 @@ tools=(
     "$toolsDir/fd.sh"
     "$toolsDir/bat.sh"
     "$toolsDir/lsd.sh"
+    "$toolsDir/zoxide.sh"
     "$toolsDir/fzf.sh"
     "$toolsDir/lazygit.sh"
     "$toolsDir/node_npm.sh"
