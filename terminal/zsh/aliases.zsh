@@ -38,5 +38,10 @@ alias fnvim='selection=$(find $HOME -type f | fzf -m); [ -n "$selection" ] && nv
 #=====> cd <=====#
 alias fcd='selection=$(find "$HOME" -type d | fzf --no-preview --preview "lsd -l --color=always --blocks permission,user,group,name {}"); [ -n "$selection" ] && cd "$selection"'
 
-#=====> git <=====#
+#=====> git - github <=====#
 alias lgit='lazygit'
+prf() {
+  local default_branch
+  default_branch=$(git remote show origin | grep -i 'head' | grep -oE '[^ ]+$')
+  gh pr create --base "$default_branch" --head "$(git branch --show-current)" --title "$1" --body "$2"
+}
