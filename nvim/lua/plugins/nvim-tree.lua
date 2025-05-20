@@ -10,10 +10,13 @@ return {
             diagnostics = {
                 enable = true,
             },
-            git = {
-                enable = true,
-                ignore = true,
-                timeout = 100,
+            -- git = {
+            --     enable = true,
+            --     ignore = true,
+            --     timeout = 100,
+            -- },
+            filters = {
+                custom = { "^\\.git$" }
             },
             view = {
                 side = "right",
