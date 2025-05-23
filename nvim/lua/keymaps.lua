@@ -25,7 +25,7 @@ map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save fi
 
 map('n', '<C-a>', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
 
-map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]], { desc = "Replace in buffer" })
+map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]], { desc = "Replace in buffer" })
 map("n", "<leader>rp", function()
     local word = vim.fn.input("Search: ")
     local replacement = vim.fn.input("Replace: ")
