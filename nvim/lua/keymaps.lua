@@ -16,10 +16,25 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Move up faster" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Move down faste" })
 
 -- others
-map("x", "<leader>p", "\"_dp", { desc = "Paste without overwrite the clipboard" })
-map("n", "<leader>gr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]], { desc = "Replace (case sensitive)" })
+map("x", "<leader>p", "\"_dp", { desc = "Paste without overwrite" })
+
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Give execution permissions" })
+
 map('n', '<leader>q', ':bd<CR>', { desc = 'Close current buffer' })
+map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save file" })
+
+map('n', '<C-a>', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
+
+map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]], { desc = "Replace in buffer" })
+map("n", "<leader>rp", function()
+    local word = vim.fn.input("Search: ")
+    local replacement = vim.fn.input("Replace: ")
+    if word == "" then return end
+    vim.cmd("vimgrep /" .. word .. "/ `find . -type f`")
+    vim.cmd("copen")
+    vim.cmd("cdo %s/" .. word .. "/" .. replacement .. "/gc")
+    vim.cmd("cclose")
+end, { desc = "Replace in proyect", noremap = true })
 
 ---------->   TELESCOPE   <----------
 local builtin = require("telescope.builtin")
@@ -32,6 +47,7 @@ map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 ---------->   LSP   <----------
+map("n", "<leader>rl", vim.lsp.buf.rename, { desc = "lsp rename" })
 map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Show definition" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
@@ -41,9 +57,9 @@ end, { desc = "Apply format" })
 
 ---------->   BUFFERLINE    <----------
 for i = 1, 9 do
-  map('n', '<leader>' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>', { desc = "[1-9] go to buffer" })
+    map('n', '<leader>' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>', { desc = "[1-9] go to buffer" })
 end
 
 ---------->   git   <----------
-map("n", "<leader>gp", ":Gitsigns preview_hunk_inline<CR>", { desc = "show git changes" })
+map("n", "<leader>gc", ":Gitsigns preview_hunk_inline<CR>", { desc = "show git changes" })
 map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "toggle blame" })
