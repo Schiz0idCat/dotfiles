@@ -13,7 +13,7 @@ return {
                 ensure_installed = {
                     "clang-format", -- c
                     "shfmt",        -- sh
-                    "yapf",        -- python
+                    "yapf",         -- python
                     "isort",        -- python imports
                     "stylua",       -- lua
                 },
