@@ -12,15 +12,14 @@ vim.g.mapleader = " "
 -- code movement
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move a piece of code" })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move a piece of code" })
-map("n", "<C-d>", "<C-d>zz", { desc = "Move up faster" })
-map("n", "<C-u>", "<C-u>zz", { desc = "Move down faste" })
+map("n", "<C-j>", "<C-d>zz", { desc = "Move up faster" })
+map("n", "<C-k>", "<C-u>zz", { desc = "Move down faste" })
 
 -- others
 map("x", "<leader>p", "\"_dp", { desc = "Paste without overwrite" })
-
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Give execution permissions" })
 
-map('n', '<leader>q', ':bd<CR>', { desc = 'Close current buffer' })
+map('n', '<leader>qq', ':bd<CR>', { desc = 'Close current buffer' })
 map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save file" })
 
 map('n', '<C-a>', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
@@ -58,6 +57,17 @@ end, { desc = "Apply format" })
 ---------->   BUFFERLINE    <----------
 for i = 1, 9 do
     map('n', '<leader>' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>', { desc = "[1-9] go to buffer" })
+    map("n", "<leader>q" .. i, function()
+        local ok, bufferline = pcall(require, "bufferline")
+        if not ok then
+            vim.notify("Bufferline not loaded", vim.log.levels.ERROR)
+            return
+        end
+
+        bufferline.exec(i, function(buf)
+            vim.cmd("bdelete " .. buf.id)
+        end)
+    end, { desc = "[1-9] Close buffer " })
 end
 
 ---------->   git   <----------
