@@ -2,7 +2,6 @@
 
 lenguagesDir="dependencies/lenguages"
 editorDir="dependencies/editor"
-editorExtrasDir="$editorDir/extras"
 toolsDir="dependencies/tools"
 fontsDir="dependencies/fonts"
 terminalDir="dependencies/terminal"
@@ -16,11 +15,6 @@ lenguages=(
 
 editor=(
     "$editorDir/neovim.sh"
-)
-
-editorExtras=(
-    "$editorExtrasDir/clangd.sh"
-    "$editorExtrasDir/bashls.sh"
 )
 
 tools=(
