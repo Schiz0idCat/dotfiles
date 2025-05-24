@@ -3,6 +3,6 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     build = ":TSUpdate",
     config = function()
-        require("config.treesitter")
+        require("plugins.config.treesitter")
     end,
 }

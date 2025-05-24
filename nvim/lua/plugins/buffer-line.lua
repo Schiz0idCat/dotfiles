@@ -6,7 +6,7 @@ return {
     },
     config = function ()
         local bufferline = require("bufferline")
-        local bufferline_config = require("config.buffer-line")
+        local bufferline_config = require("plugins.config.buffer-line")
         bufferline.setup(bufferline_config)
     end
 }

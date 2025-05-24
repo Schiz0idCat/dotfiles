@@ -7,13 +7,13 @@ return {
             "nvim-treesitter/nvim-treesitter",
         },
         config = function()
-            require("config.telescope")
+            require("plugins.config.telescope")
         end,
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
         config = function()
-            require("config.telescope-ui")
+            require("plugins.config.telescope-ui")
         end,
     },
 }

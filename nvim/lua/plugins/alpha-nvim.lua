@@ -6,6 +6,6 @@ return {
     },
 
     config = function()
-        require("config.alpha-nvim")
+        require("plugins.config.alpha-nvim")
     end,
 }
