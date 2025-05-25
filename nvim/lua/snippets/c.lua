@@ -4,7 +4,7 @@ local t = ls.text_node
 local i = ls.insert_node
 
 return {
-    s("#inc", {
+    s("#include", {
         t("#include <"), i(0), t(">")
     }),
 
@@ -33,10 +33,10 @@ return {
     }),
 
     s("case", {
-        t('case '), i(1, "condition"), t(':'),
-        t({ "", "\t" }),
-        i(0),
+        t("case "), i(1, "condition"), t(":"),
+        t({ "", "\t" }), i(2),
         t({ "", "\tbreak;" }),
+        t({ "", "" }), i(3)
     }),
 
     s("default", {
