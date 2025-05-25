@@ -3,7 +3,8 @@ local lspconfig = require("lspconfig")
 local servers = {
     "clangd",
     "pyright",
-    "lua_ls"
+    "lua_ls",
+    "bashls"
 }
 
 for _, server in ipairs(servers) do
