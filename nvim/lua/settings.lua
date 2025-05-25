@@ -45,8 +45,8 @@ vim.api.nvim_create_autocmd("ModeChanged", {
         -- while normal mode
         if new_mode == "n" then
             vim.diagnostic.config({
-                virtual_lines = true,
-                virtual_text = false,
+                virtual_lines = false,
+                virtual_text = true,
             })
         -- while any other mode
         else
