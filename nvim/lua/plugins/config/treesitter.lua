@@ -1,6 +1,7 @@
-local configs = require("nvim-treesitter.configs")
+local treesitter = require("nvim-treesitter.configs")
+local context = require("treesitter-context")
 
-configs.setup({
+treesitter.setup({
     auto_install = true,
     sync_install = false,
     highlight = { enable = true },
@@ -17,4 +18,12 @@ configs.setup({
             },
         },
     },
+})
+
+context.setup({
+    enable = true,
+    max_lines = 0,
+    min_window_height = 0,
+    line_numbers = true,
+    mode = "cursor",
 })
