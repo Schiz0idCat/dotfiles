@@ -8,7 +8,7 @@ terminalDir="dependencies/terminal"
 shellDir="dependencies/shell"
 shellPluginsDir="$shellDir/plugins"
 wmDir="dependencies/wm"
-otherDir="dependencies/other"
+grubDir="dependencies/grub"
 
 lenguages=(
     "$lenguagesDir/gcc.sh"
