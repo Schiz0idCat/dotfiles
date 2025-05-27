@@ -45,3 +45,7 @@ prf() {
   default_branch=$(git remote show origin | grep -i 'head' | grep -oE '[^ ]+$')
   gh pr create --base "$default_branch" --head "$(git branch --show-current)" --title "$1" --body "$2"
 }
+
+#=====> python <=====#
+alias py-venv-on='[ -d .venv ] || python -m venv .venv; source .venv/bin/activate'
+alias py-venv-off='deactivate'

@@ -11,6 +11,7 @@ final_space = true
   red = '#bd1e1e'
   white = '#E0DEF4'
   yellow = '#F8F32B'
+  blue = '#0277bd'
 
 [[blocks]] # LEFT BLOCK
   type = "prompt"
@@ -123,6 +124,16 @@ final_space = true
     [blocks.segments.properties]
       threshold = 5000
       style = "round"
+
+[[blocks.segments]] # PYTHON (WIDTH >= 96)
+    min_width = 96
+    type = "python"
+    style = "diamond"
+    leading_diamond = "\uE0B2"
+    trailing_diamond = ""
+    foreground = "p:blue"
+    background = "p:gray"
+    template = "  {{ .Venv }} "
 
 # NEW LINE
 
