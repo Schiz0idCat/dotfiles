@@ -16,3 +16,8 @@ shellLn=(
     "~/dotfiles/terminal/zsh/.zshrc:~/.zshrc"
     "~/dotfiles/terminal/zsh/aliases.zsh:~/.oh-my-zsh/custom/aliases.zsh"
 )
+
+wmLn=(
+    "~/dotfiles/hypr/:~/.config/"
+    "~/dotfiles/waybar/:~/.config/"
+)

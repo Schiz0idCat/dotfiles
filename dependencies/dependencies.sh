@@ -7,10 +7,10 @@ fontsDir="dependencies/fonts"
 terminalDir="dependencies/terminal"
 shellDir="dependencies/shell"
 shellPluginsDir="$shellDir/plugins"
+wmDir="dependencies/wm"
 
 lenguages=(
     "$lenguagesDir/gcc.sh"
-    "$lenguagesDir/rust.sh"
 )
 
 editor=(
@@ -18,6 +18,8 @@ editor=(
 )
 
 tools=(
+    "$toolsDir/brightnessctl.sh"
+    "$toolsDir/unzip.sh"
     "$toolsDir/curl.sh"
     "$toolsDir/wget.sh"
     "$toolsDir/fd.sh"
@@ -27,9 +29,8 @@ tools=(
     "$toolsDir/fzf.sh"
     "$toolsDir/lazygit.sh"
     "$toolsDir/githubCLI.sh"
-    "$toolsDir/node_npm.sh"
+    "$toolsDir/npm.sh"
     "$toolsDir/yazi.sh"
-    "$toolsDir/silicon.sh"
 )
 
 fonts=(
@@ -51,4 +52,15 @@ shellExtras=(
     "$shellPluginsDir/autosuggestions.sh"
     "$shellPluginsDir/syntax-highlighting.sh"
     "$shellPluginsDir/fzf-tab.sh"
+)
+
+wm=(
+    "$wmDir/hyprland.sh"
+    "$wmDir/dolphin.sh"
+    "$wmDir/hypridle.sh"
+    "$wmDir/hyprpaper.sh"
+    "$wmDir/hyprshot.sh"
+    "$wmDir/hyprsunset.sh"
+    "$wmDir/swaync.sh"
+    "$wmDir/wl-clipboard.sh"
 )

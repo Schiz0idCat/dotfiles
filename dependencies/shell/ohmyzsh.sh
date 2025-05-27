@@ -1,12 +1,7 @@
 #!/bin/bash
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo "Installing Oh My Zsh..."
-
-    if ! command -v curl >/dev/null 2>&1; then
-        chmod +x ~/dotfiles/dependencies/tools/curl.sh
-        bash ~/dotfiles/dependencies/tools/curl.sh
-    fi 
+    echo "Installing Oh My Zsh using curl..."
 
     if ! sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"; then
         echo "Error: failed to install Oh My Zsh. Aborting."

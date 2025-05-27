@@ -1,10 +1,15 @@
 #!/bin/bash
 
-if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/fzf-tab" ]; then
-    echo "Installing fzf-tab plugin..."
+if ! command -v fzf-tab >/dev/null 2>&1; then
+    echo "Installing fzf-tab..."
 
-    if ! git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab; then
-        echo "Error: failed to clone fzf-tab. Aborting."
+    if ! command -v yay >/dev/null 2>&1; then
+        echo "Error: yay is not installed. Please install yay first."
+        exit 1
+    fi
+
+    if ! yay -S --noconfirm fzf-tab-source; then
+        echo "Error: failed to install fzf-tab-source. Aborting."
         exit 1
     fi
 fi

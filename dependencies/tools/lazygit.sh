@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if ! command -v lazygit >/dev/null 2>&1; then
-    echo "Installing lazygit..."
+    echo "Installing Lazygit..."
 
-    if ! sudo apt install -y lazygit; then
-        echo "Error: failed to install lazygit. Aborting."
+    if ! sudo pacman -S --noconfirm lazygit; then
+        echo "Error: failed to install Lazygit. Aborting."
         exit 1
     fi
 fi
-echo "lazygit installed."
+echo "Lazygit installed."

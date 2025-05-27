@@ -37,7 +37,7 @@ makeLink() {
     done
 }
 
-sudo apt update
+sudo pacman -Syu
 source "./dependencies/dependencies.sh"
 source "./dependencies/links.sh"
 
@@ -85,6 +85,14 @@ installDependencies "${terminal[@]}"
 
 makeLink "${terminalLn[@]}"
 echo -e "\nTerminal config setup."
+
+echo ""
+
+echo "#==========>   WM   <==========#"
+installDependencies "${wm[@]}"
+
+makeLink "${wmLn[@]}"
+echo -e "\nWM config setup."
 
 echo ""
 

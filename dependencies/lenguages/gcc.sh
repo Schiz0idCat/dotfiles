@@ -1,10 +1,11 @@
 #!/bin/bash
 
-set -e
-
 if ! command -v gcc >/dev/null 2>&1; then
-    echo "Installing gcc (C compiler)..."
+    echo "Installing GCC..."
 
-    sudo apt install -y build-essential
+    if ! sudo pacman -S --noconfirm gcc; then
+        echo "Error: failed to install GCC. Aborting."
+        exit 1
+    fi
 fi
-echo "gcc installed."
+echo "GCC installed."
