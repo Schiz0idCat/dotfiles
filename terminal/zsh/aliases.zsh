@@ -1,5 +1,5 @@
 #=====> cat <=====#
-alias cat='batcat --paging=never'
+alias cat='bat --paging=never'
 
 #=====> ls <=====#
 alias ls='lsd'
