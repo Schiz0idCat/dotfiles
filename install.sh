@@ -96,4 +96,12 @@ echo -e "\nWM config setup."
 
 echo ""
 
+
+echo "#==========>   OTHER   <==========#"
+installDependencies "${other[@]}"
+
+echo -e "\nOther configs setup."
+
+echo ""
+
 echo "Dotfiles have been installed successfully :)"

@@ -8,6 +8,7 @@ terminalDir="dependencies/terminal"
 shellDir="dependencies/shell"
 shellPluginsDir="$shellDir/plugins"
 wmDir="dependencies/wm"
+otherDir="dependencies/other"
 
 lenguages=(
     "$lenguagesDir/gcc.sh"
@@ -31,6 +32,7 @@ tools=(
     "$toolsDir/githubCLI.sh"
     "$toolsDir/npm.sh"
     "$toolsDir/yazi.sh"
+    "$toolsDir/imagemagick.sh"
 )
 
 fonts=(
@@ -63,4 +65,8 @@ wm=(
     "$wmDir/hyprsunset.sh"
     "$wmDir/swaync.sh"
     "$wmDir/wl-clipboard.sh"
+)
+
+other=(
+    "$otherDir/grub.sh"
 )
