@@ -1,6 +1,9 @@
 #!/bin/bash
 
-if ! command -v fzf-tab >/dev/null 2>&1; then
+TARGET="~/.oh-my-zsh/custom/plugins/fzf-tab-source"
+NEW_LOCATION="~/.oh-my-zsh/custom/plugins/fzf-tab"
+
+if [ ! -d "TARGET" ] >/dev/null 2>&1; then
     echo "Installing fzf-tab..."
 
     if ! command -v yay >/dev/null 2>&1; then
@@ -12,5 +15,7 @@ if ! command -v fzf-tab >/dev/null 2>&1; then
         echo "Error: failed to install fzf-tab-source. Aborting."
         exit 1
     fi
+
+    sudo mv /usr/share/zsh/plugins/fzf-tab-source "$TARGET"
 fi
 echo "fzf-tab installed."
