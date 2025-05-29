@@ -9,6 +9,7 @@ shellDir="dependencies/shell"
 shellPluginsDir="$shellDir/plugins"
 wmDir="dependencies/wm"
 grubDir="dependencies/grub"
+socialDir="dependencies/social"
 
 lenguages=(
     "$lenguagesDir/gcc.sh"
@@ -65,8 +66,15 @@ wm=(
     "$wmDir/hyprsunset.sh"
     "$wmDir/swaync.sh"
     "$wmDir/wl-clipboard.sh"
+    "$wmDir/qt.sh"
+    "$wmDir/sddm.sh"
 )
 
 other=(
-    "$otherDir/grub.sh"
+    "$grubDir/grub.sh"
+)
+
+social=(
+    "$socialDir/spotify.sh"
+    "$socialDir/discord.sh"
 )
