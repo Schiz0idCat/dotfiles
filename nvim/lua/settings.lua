@@ -13,7 +13,7 @@ opt.clipboard = "unnamedplus"
 opt.number = true
 opt.relativenumber = true
 opt.signcolumn = "yes"
-opt.scrolloff = 10
+opt.scrolloff = 5
 
 ----------> DIAGNOSTIC <----------
 -- icons
