@@ -96,11 +96,17 @@ echo -e "\nWM config setup."
 
 echo ""
 
-
 echo "#==========>   OTHER   <==========#"
 installDependencies "${other[@]}"
 
 echo -e "\nOther configs setup."
+
+echo ""
+
+echo "#==========>   SOCIAL   <==========#"
+installDependencies "${social[@]}"
+
+echo -e "\nSocial configs setup."
 
 echo ""
 
