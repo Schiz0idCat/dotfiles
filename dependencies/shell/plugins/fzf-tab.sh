@@ -1,9 +1,8 @@
 #!/bin/bash
 
-TARGET="~/.oh-my-zsh/custom/plugins/fzf-tab-source"
-NEW_LOCATION="~/.oh-my-zsh/custom/plugins/fzf-tab"
+TARGET="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fzf-tab"
 
-if [ ! -d "TARGET" ] >/dev/null 2>&1; then
+if [ ! -d "$TARGET" ] >/dev/null 2>&1; then
     echo "Installing fzf-tab..."
 
     if ! command -v yay >/dev/null 2>&1; then

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TARGET="~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+TARGET="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
-if [ ! -d "TARGET" ]; then
+if [ ! -d "$TARGET" ]; then
     echo "Installing zsh-autosuggestions..."
 
     if ! sudo pacman -S --noconfirm zsh-autosuggestions; then

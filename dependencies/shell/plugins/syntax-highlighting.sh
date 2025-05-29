@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TARGET="~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+TARGET="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
-if [ ! -d "TARGET" ]; then
+if [ ! -d "$TARGET" ]; then
     echo "Installing zsh-syntax-highlighting..."
 
     if ! sudo pacman -S --noconfirm zsh-syntax-highlighting; then
