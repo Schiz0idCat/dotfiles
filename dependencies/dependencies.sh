@@ -59,6 +59,7 @@ shellExtras=(
 
 wm=(
     "$wmDir/hyprland.sh"
+    "$wmDir/cursor.sh"
     "$wmDir/dolphin.sh"
     "$wmDir/hypridle.sh"
     "$wmDir/hyprpaper.sh"
