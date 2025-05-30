@@ -1,43 +1,27 @@
 #!/bin/bash
 
-FLAG="~/dotfiles/dependencies/grub/flag.txt"
+GRUB_DIR="/usr/share/grub/themes"
+USER="demian"
+THEME_DIR="/home/$USER/dotfiles/grub"
+NAME="dark-grub"
 
-if [[ "$(head -n 1 "$FLAG")" == "1" ]]; then
-    echo "grub configured."
-    exit 0
-fi
-
-echo "Configuring GRUB theme..."
-
-THEME_REPO="https://github.com/sandesh236/sleek--themes.git"
-THEME_DIR="$HOME/sleek--themes"
-THEME_NAME="Sleek theme-dark"
-INSTALL_SCRIPT="$THEME_DIR/$THEME_NAME/install.sh"
-
-GRUB_CFG="/boot/grub/grub.cfg"
-GRUB_UPDATE_CMD="sudo grub-mkconfig -o $GRUB_CFG"
-
-if ! command -v git >/dev/null 2>&1; then
-  echo "Git not found. Installing git..."
-  if ! sudo pacman -S --noconfirm git; then
-    echo "Error: failed to install git. Aborting."
-    exit 1
-  fi
-fi
-
-if [ ! -d "$THEME_DIR" ]; then
-  echo "Cloning the GRUB theme repository..."
-  git clone "$THEME_REPO" "$THEME_DIR"
-fi
-
-if [ ! -f "$INSTALL_SCRIPT" ]; then
-  echo "Error: install.sh not found in $THEME_NAME"
+if [[ $EUID -ne 0 ]]; then
+  echo "Error: You must run this script as root or using sudo." >&2
   exit 1
 fi
 
-cd "$THEME_DIR/$THEME_NAME"
-chmod +x install.sh
-echo "Running installation script for '$THEME_NAME'..."
-sudo ./install.sh
+#=====>   clean directory and put the theme   <=====#
+[[ -d ${GRUB_DIR}/${NAME} ]] && rm -rf ${GRUB_DIR}/${NAME}
 
-echo "1" > "$FILE"
+mkdir -p "${GRUB_DIR}/${NAME}" 
+
+cp -a "${THEME_DIR}/." "${GRUB_DIR}/${NAME}/"
+
+#=====>   set theme   <=====#
+cp -an /etc/default/grub /etc/default/grub.bak
+
+grep "GRUB_THEME=" /etc/default/grub >/dev/null 2>&1 && sed -i '/GRUB_THEME=/d' /etc/default/grub
+
+echo "GRUB_THEME=\"${GRUB_DIR}/${NAME}/theme.txt\"" >> /etc/default/grub
+
+grub-mkconfig -o /boot/grub/grub.cfg
