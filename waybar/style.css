@@ -1,0 +1,45 @@
+@define-color orange #f88a07;
+@define-color black #2e3440;
+@define-color dark_gray #757c8a;
+@define-color white #e0e2e7;
+@define-color green #8ebd6b;
+@define-color red #e55561;
+
+* {
+    padding: 1px 5px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces {
+    background-color: @black;
+}
+
+#workspaces button {
+    color: @white;
+}
+
+#workspaces button.active {
+    color: @orange;
+}
+
+#workspaces button.empty {
+    color: @dark_gray;
+}
+
+#battery {
+    background-color: @black;
+    color: @green;
+}
+
+#battery.warning {
+    color: @orange;
+}
+
+#battery.critical {
+    color: @red;
+}
