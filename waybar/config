@@ -4,7 +4,7 @@
     "height": 30,
     "spacing": 4, // Gaps between modules (4px)
 
-    "include": ["~/dotfiles/waybar/mudules.json"],
+    "include": ["~/dotfiles/waybar/modules.json"],
 
     "modules-left": [
     ],
