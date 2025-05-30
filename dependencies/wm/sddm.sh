@@ -17,7 +17,7 @@ if ! command -v sddm >/dev/null 2>&1; then
     fi
 
     # set profile picture
-    ln -sf ~/dotfiles/images/icons/black_cat.png ~/.face.icon
+    ln -sf ~/dotfiles/images/profile/black_cat.png ~/.face.icon
 
     setfacl -m u:sddm:x /home/username
     setfacl -m u:sddm:r /home/username/.face.icon
