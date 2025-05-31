@@ -2,13 +2,14 @@
 @define-color black #2e3440;
 @define-color dark_gray #757c8a;
 @define-color white #e0e2e7;
-@define-color green #8ebd6b;
+@define-color green #32d814;
 @define-color red #e55561;
+@define-color yellow #d9df0d;
+@define-color blue #61afef;
 
 * {
     padding: 1px 5px;
     border-radius: 8px;
-    box-shadow: none;
 }
 
 window#waybar {
@@ -31,6 +32,19 @@ window#waybar {
     color: @dark_gray;
 }
 
+#custom-power {
+    min-width: 24px;
+    font-size: 23px;
+    font-weight: bold;
+    background-color: @black;
+    color: @red;
+}
+
+#clock {
+    background-color: @black;
+    color: @white;
+}
+
 #battery {
     background-color: @black;
     color: @green;
@@ -42,4 +56,83 @@ window#waybar {
 
 #battery.critical {
     color: @red;
+}
+
+#backlight {
+    min-width: 51px;
+    padding-right: 10px;
+    background-color: @black;
+    color: @yellow;
+}
+
+#network {
+    min-width: 17px;
+    padding-right: 10px;
+    background-color: @black;
+    color: @blue;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#bluetooth {
+    min-width: 17px;
+    background-color: @black;
+    color: @blue;
+}
+
+#bluetooth.off {
+    color: @red;
+}
+
+#pulseaudio {
+    padding: 0 10px;
+    background-color: @black;
+    color: @white;
+}
+
+#cpu {
+    min-width: 45px;
+    background-color: @black;
+    color: @orange;
+}
+
+#memory {
+    min-width: 45px;
+    background-color: @black;
+    color: @green;
+}
+
+#disk {
+    min-width: 50px;
+    background-color: @black;
+    color: @white;
+}
+
+#temperature {
+    min-width: 40px;
+    background-color: @black;
+    color: @red;
+}
+
+@keyframes critical-blink {
+  0% {
+    background-color: black;
+    color: red;
+  }
+  50% {
+    background-color: red;
+    color: black;
+  }
+  100% {
+    background-color: black;
+    color: red;
+  }
+}
+
+#temperature.critical {
+  animation: critical-blink 1s ease-in-out infinite;
+  font-weight: bold;
+  transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
