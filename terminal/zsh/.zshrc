@@ -8,6 +8,12 @@ function precmd() {
   __ZSH_PROMPT_STARTED=true
 }
 
+ws_id=$(hyprctl activeworkspace -j | jq '.id')
+window_count=$(hyprctl clients -j | jq "[.[] | select(.workspace.id == $ws_id)] | length")
+if [ "$window_count" -eq 1 ]; then
+    fastfetch --config ~/dotfiles/fastfetch/fastfetch.jsonc --logo ~/dotfiles/fastfetch/logo.txt
+fi
+
 #=====> ZSH <=====#
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

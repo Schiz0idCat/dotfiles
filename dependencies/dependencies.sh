@@ -34,6 +34,7 @@ tools=(
     "$toolsDir/npm.sh"
     "$toolsDir/yazi.sh"
     "$toolsDir/imagemagick.sh"
+    "$toolsDir/fastfetch.sh"
 )
 
 fonts=(
