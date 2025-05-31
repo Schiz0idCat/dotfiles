@@ -50,12 +50,35 @@ window#waybar {
     color: @green;
 }
 
-#battery.warning {
+@keyframes blink-green-idle {
+    0%   { color: @green; }
+    5%   { color: @black; }
+    10%  { color: @green; }
+    15%  { color: @black; }
+    20%  { color: @green; }
+    100% { color: @green; }
+}
+
+#battery.full.charging {
+    animation: blink-green-idle 5s linear infinite;
+    font-weight: bold;
+}
+
+#battery.warning:not(.charging) {
     color: @orange;
 }
 
-#battery.critical {
-    color: @red;
+@keyframes fade-red-black {
+    0%   { color: #ff0000; }
+    25%  { color: #800000; }
+    50%  { color: #000000; }
+    75%  { color: #800000; }
+    100% { color: #ff0000; }
+}
+
+#battery.critical:not(.charging) {
+    font-weight: bold;
+    animation: fade-red-black 2s linear infinite;
 }
 
 #backlight {
