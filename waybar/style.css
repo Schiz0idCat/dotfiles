@@ -1,5 +1,6 @@
 @define-color orange #f88a07;
-@define-color black #2e3440;
+@define-color dark #2e3440;
+@define-color black #1e1e27;
 @define-color dark_gray #757c8a;
 @define-color white #e0e2e7;
 @define-color green #32d814;
@@ -7,21 +8,26 @@
 @define-color yellow #d9df0d;
 @define-color blue #61afef;
 
-* {
-    padding: 1px 5px;
-    border-radius: 8px;
-}
-
 window#waybar {
-    background-color: transparent;
+    background-color: @dark;
+    border-radius: 15px;
 }
 
 #workspaces {
-    background-color: @black;
+    background-color: @dark;
 }
 
 #workspaces button {
     color: @white;
+}
+
+#workspaces button:hover {
+    box-shadow: none; /* Remove predefined box-shadow */
+    text-shadow: none; /* Remove predefined text-shadow */
+    background: none; /* Remove predefined background color (white) */
+    transition: none; /* Disable predefined animations */
+    border: none; /* Remove predefined border color (white) */
+    padding: 0px 10px;
 }
 
 #workspaces button.active {
@@ -33,47 +39,44 @@ window#waybar {
 }
 
 #custom-power {
-    min-width: 24px;
+    min-width: 20px;
     font-size: 23px;
     font-weight: bold;
-    background-color: @black;
     color: @red;
+    border: 2px solid @red;
+    border-radius: 50%;
+    margin-right: 7px;
+    margin-left: 3px;
+    padding: 0px 5px;
 }
 
 #clock {
-    background-color: @black;
     color: @white;
+    border-bottom: 2px solid @white;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #battery {
-    background-color: @black;
     color: @green;
-}
-
-@keyframes blink-green-idle {
-    0%   { color: @green; }
-    5%   { color: @black; }
-    10%  { color: @green; }
-    15%  { color: @black; }
-    20%  { color: @green; }
-    100% { color: @green; }
-}
-
-#battery.full.charging {
-    animation: blink-green-idle 5s linear infinite;
-    font-weight: bold;
+    border-bottom: 2px solid @green;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #battery.warning:not(.charging) {
     color: @orange;
+    border-bottom: 2px solid @orange;
 }
 
 @keyframes fade-red-black {
-    0%   { color: #ff0000; }
-    25%  { color: #800000; }
-    50%  { color: #000000; }
-    75%  { color: #800000; }
-    100% { color: #ff0000; }
+0%   { color: #ff0000; }
+25%  { color: #800000; }
+50%  { color: #000000; }
+75%  { color: #800000; }
+100% { color: #ff0000; }
 }
 
 #battery.critical:not(.charging) {
@@ -84,78 +87,104 @@ window#waybar {
 #backlight {
     min-width: 51px;
     padding-right: 10px;
-    background-color: @black;
     color: @yellow;
+    border-bottom: 2px solid @yellow;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #network {
     min-width: 17px;
     padding-right: 10px;
-    background-color: @black;
     color: @blue;
+    border-bottom: 2px solid @blue;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #network.disconnected {
     color: @red;
+    border-bottom: 2px solid @red;
 }
 
 #bluetooth {
     min-width: 17px;
-    background-color: @black;
     color: @blue;
+    border-bottom: 2px solid @blue;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #bluetooth.off {
     color: @red;
+    border-bottom: 2px solid @red;
 }
 
 #pulseaudio {
     padding: 0 10px;
-    background-color: @black;
     color: @white;
+    border-bottom: 2px solid @white;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #cpu {
     min-width: 45px;
-    background-color: @black;
     color: @orange;
+    border-bottom: 2px solid @orange;
+    margin-left: 15px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #memory {
     min-width: 45px;
-    background-color: @black;
     color: @green;
+    border-bottom: 2px solid @green;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #disk {
     min-width: 50px;
-    background-color: @black;
     color: @white;
+    border-bottom: 2px solid @white;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 #temperature {
     min-width: 40px;
-    background-color: @black;
     color: @red;
+    border-bottom: 2px solid @red;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px 5px;
 }
 
 @keyframes critical-blink {
-  0% {
-    background-color: black;
-    color: red;
-  }
-  50% {
-    background-color: red;
-    color: black;
-  }
-  100% {
-    background-color: black;
-    color: red;
-  }
+0% {
+    background-color: @dark;
+    color: @red;
+}
+50% {
+    background-color: @red;
+    color: @dark;
+}
+100% {
+    background-color: @dark;
+    color: @red;
+}
 }
 
 #temperature.critical {
-  animation: critical-blink 1s ease-in-out infinite;
-  font-weight: bold;
-  transition: background-color 1s ease-in-out, color 1s ease-in-out;
+    animation: critical-blink 1s ease-in-out infinite;
+    font-weight: bold;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
 }
