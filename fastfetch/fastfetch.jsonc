@@ -8,6 +8,46 @@
     },
     "modules": [
         {
+            "type": "title",
+            "key": "╭─",
+            "format": "{user-name}@{host-name}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "os",
+            "key": "├─{icon}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": "╰─󰏖",
+            "keyColor": "blue"
+        },
+        "break",
+
+        {
+            "type": "shell",
+            "key": "╭─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "├─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminalfont",
+            "key": "├─",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "wm",
+            "key": "╰─",
+            "keyColor": "yellow"
+        },
+        "break",
+
+        {
             "type": "host",
             "key": "╭─󰌢",
             "keyColor": "green"
@@ -36,52 +76,6 @@
             "type": "display",
             "key": "╰─󰍹",
             "keyColor": "green"
-        },
-        "break",
-
-        {
-            "type": "shell",
-            "key": "╭─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "terminal",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "terminalfont",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "wm",
-            "key": "╰─",
-            "keyColor": "yellow"
-        },
-        "break",
-
-        {
-            "type": "title",
-            "key": "╭─",
-            "format": "{user-name}@{host-name}",
-            "keyColor": "blue"
-        },
-        {
-            "type": "os",
-            "key": "├─{icon}", // Just get your distro's logo off nerdfonts.com
-            "keyColor": "blue"
-        },
-        {
-            "type": "packages",
-            "key": "├─󰏖",
-            "keyColor": "blue"
-        },
-        {
-            "type": "localip",
-            "key": "╰─󰩟",
-            "compact": true,
-            "keyColor": "blue"
         },
     ]
 }
