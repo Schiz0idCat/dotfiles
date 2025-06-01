@@ -35,6 +35,7 @@ tools=(
     "$toolsDir/yazi.sh"
     "$toolsDir/imagemagick.sh"
     "$toolsDir/fastfetch.sh"
+    "$toolsDir/btop.sh"
 )
 
 fonts=(
