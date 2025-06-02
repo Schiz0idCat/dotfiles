@@ -36,6 +36,7 @@ tools=(
     "$toolsDir/imagemagick.sh"
     "$toolsDir/fastfetch.sh"
     "$toolsDir/btop.sh"
+    "$toolsDir/spotify-player.sh"
 )
 
 fonts=(
