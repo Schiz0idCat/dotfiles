@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! command -v spotify-player >/dev/null 2>&1; then
+if ! command -v spotify_player >/dev/null 2>&1; then
     echo "Installing spotify-player-full..."
 
     if ! command -v yay >/dev/null 2>&1; then
