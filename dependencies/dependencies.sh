@@ -72,6 +72,7 @@ wm=(
     "$wmDir/wl-clipboard.sh"
     "$wmDir/qt.sh"
     "$wmDir/sddm.sh"
+    "$wmDir/hypr-portal.sh"
 )
 
 other=(
