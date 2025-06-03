@@ -37,6 +37,8 @@ tools=(
     "$toolsDir/fastfetch.sh"
     "$toolsDir/btop.sh"
     "$toolsDir/spotify-player.sh"
+    "$toolsDir/docker.sh"
+    "$toolsDir/lazydocker.sh"
 )
 
 fonts=(
