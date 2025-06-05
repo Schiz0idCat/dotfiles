@@ -8,6 +8,10 @@
 @define-color yellow #d9df0d;
 @define-color blue #61afef;
 
+* {
+    font-size: 20px;
+}
+
 window#waybar {
     background-color: @dark;
     border-radius: 15px;
@@ -39,7 +43,7 @@ window#waybar {
 }
 
 #custom-power {
-    min-width: 20px;
+    min-width: 22px;
     font-size: 23px;
     font-weight: bold;
     color: @red;
