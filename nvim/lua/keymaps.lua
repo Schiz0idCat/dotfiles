@@ -19,6 +19,9 @@ map("n", "<C-k>", "<C-u>zz", { desc = "Move down faste" })
 map("x", "<leader>p", "\"_dp", { desc = "Paste without overwrite" })
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Give execution permissions" })
 
+vim.keymap.set('n', '<M-o>', 'o<Esc>o<Esc>^i', { desc = 'Insert 2 lines below', noremap = true, silent = true })
+vim.keymap.set('n', '<M-O>', 'O<Esc>O<Esc>^i', { desc = 'Insert 2 lines above', noremap = true, silent = true })
+
 map('n', '<leader>qq', ':bd<CR>', { desc = 'Close current buffer' })
 map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save file" })
 
