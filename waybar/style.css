@@ -76,16 +76,16 @@ window#waybar {
 }
 
 @keyframes fade-red-black {
-0%   { color: #ff0000; }
-25%  { color: #800000; }
-50%  { color: #000000; }
-75%  { color: #800000; }
-100% { color: #ff0000; }
+0%   { color: #ff0000; border-bottom-color: #ff0000; }
+25%  { color: #800000; border-bottom-color: #800000; }
+50%  { color: #550000; border-bottom-color: #550000; }
+75%  { color: #800000; border-bottom-color: #800000; }
+100% { color: #ff0000; border-bottom-color: #ff0000; }
 }
 
 #battery.critical:not(.charging) {
     font-weight: bold;
-    animation: fade-red-black 2s linear infinite;
+    animation: fade-red-black 0.7s linear infinite;
 }
 
 #backlight {
