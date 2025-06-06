@@ -107,14 +107,5 @@ export EDITOR='nvim'
 eval "$(zoxide init --cmd cd zsh)"
 
 #=====> HYPRLAND <=====#
-# fastfetch just in the first terminal of current the workspace
-ws_id=$(hyprctl activeworkspace -j | jq '.id')
-window_count=$(hyprctl clients -j | jq "[.[] | select(.workspace.id == $ws_id)] | length")
-
 # hyprshot
 export HYPRSHOT_DIR="$HOME/Pictures/Screenshots"
-
-#=====> FASTFETCH <=====#
-if [ "$window_count" -eq 1 ]; then
-    fastfetch --config ~/dotfiles/fastfetch/fastfetch.jsonc --logo ~/dotfiles/fastfetch/logo.txt
-fi
