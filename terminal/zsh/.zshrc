@@ -1,4 +1,4 @@
-export ZSH="$HOME/.oh-my-zsh"
+#=====> ZSH <=====#
 export PATH="$HOME/.local/bin:$PATH"
 
 function precmd() {
@@ -8,18 +8,13 @@ function precmd() {
   __ZSH_PROMPT_STARTED=true
 }
 
-ws_id=$(hyprctl activeworkspace -j | jq '.id')
-window_count=$(hyprctl clients -j | jq "[.[] | select(.workspace.id == $ws_id)] | length")
-if [ "$window_count" -eq 1 ]; then
-    fastfetch --config ~/dotfiles/fastfetch/fastfetch.jsonc --logo ~/dotfiles/fastfetch/logo.txt
-fi
-
-#=====> ZSH <=====#
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
 
 #=====> OH MY ZSH <=====#
+export ZSH="$HOME/.oh-my-zsh"
+
 plugins=(
 	git
 	sudo
@@ -110,3 +105,13 @@ export EDITOR='nvim'
 
 #=====> ZOXIDE <=====#
 eval "$(zoxide init --cmd cd zsh)"
+
+#=====> HYPRLAND <=====#
+# fastfetch just in the first terminal of current the workspace
+ws_id=$(hyprctl activeworkspace -j | jq '.id')
+window_count=$(hyprctl clients -j | jq "[.[] | select(.workspace.id == $ws_id)] | length")
+
+#=====> FASTFETCH <=====#
+if [ "$window_count" -eq 1 ]; then
+    fastfetch --config ~/dotfiles/fastfetch/fastfetch.jsonc --logo ~/dotfiles/fastfetch/logo.txt
+fi
