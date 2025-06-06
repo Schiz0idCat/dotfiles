@@ -20,30 +20,18 @@
         },
         {
             "type": "packages",
-            "key": "╰─󰏖",
+            "key": "├─󰏖",
             "keyColor": "blue"
         },
-        "break",
-
         {
             "type": "shell",
-            "key": "╭─",
-            "keyColor": "yellow"
+            "key": "├─",
+            "keyColor": "blue"
         },
         {
             "type": "terminal",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "terminalfont",
-            "key": "├─",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "wm",
-            "key": "╰─",
-            "keyColor": "yellow"
+            "key": "╰─",
+            "keyColor": "blue"
         },
         "break",
 
