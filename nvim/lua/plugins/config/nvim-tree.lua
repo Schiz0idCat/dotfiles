@@ -8,6 +8,12 @@ nvim_tree.setup({
         custom = { "^%.git$" },
     },
     view = {
+        width = {
+            min = 0,
+            max = 60,
+            padding = 2,
+        },
+        preserve_window_proportions = true,
         side = "right",
     },
     renderer = {
