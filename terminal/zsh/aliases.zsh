@@ -11,9 +11,6 @@ alias ltl='lsd --tree -l'
 alias lta='lsd --tree -a'
 alias ltla='lsd --tree -la'
 
-#=====> browser <=====#
-alias brave='brave-browser'
-
 #=====> fzf <=====#
 alias fzf="fzf --reverse --style full \
     --preview 'batcat --color=always --style=numbers {}' \
