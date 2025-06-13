@@ -105,7 +105,3 @@ export EDITOR='nvim'
 
 #=====> ZOXIDE <=====#
 eval "$(zoxide init --cmd cd zsh)"
-
-#=====> HYPRLAND <=====#
-# hyprshot
-export HYPRSHOT_DIR="$HOME/Pictures/Screenshots"
