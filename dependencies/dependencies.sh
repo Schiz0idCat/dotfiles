@@ -13,6 +13,7 @@ socialDir="dependencies/social"
 
 lenguages=(
     "$lenguagesDir/gcc.sh"
+    "$lenguagesDir/rust.sh"
 )
 
 editor=(
