@@ -45,7 +45,7 @@ cmp.setup({
                 Color = "",
                 File = "󰈔",
                 Reference = "󰈇",
-                Folder = "",
+                Folder = "󰉋",
                 EnumMember = "",
                 Constant = "󰏿",
                 Struct = "",
