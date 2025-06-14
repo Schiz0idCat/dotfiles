@@ -99,19 +99,25 @@ window#waybar {
 }
 
 #network {
-    min-width: 17px;
-    padding-right: 10px;
     color: @blue;
     border-bottom: 2px solid @blue;
-    margin-left: 3px;
-    margin-right: 3px;
-    padding: 0px 5px;
+}
+
+#network.wifi {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#network.ethernet {
+    min-width: 30px;
+    padding-right: 5px;
 }
 
 #network.disconnected {
     color: @red;
     border-bottom: 2px solid @red;
-    padding-right: 8px;
+    min-width: 30px;
+    padding-right: 7px;
 }
 
 #bluetooth {
