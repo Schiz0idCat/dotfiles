@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if ! command -v spotify >/dev/null 2>&1; then
-    echo "Installing Spotify..."
+if ! command -v spotify_player >/dev/null 2>&1; then
+    echo "Installing Spotify player..."
 
-    if ! yay -S --noconfirm spotify; then
-        echo "Error: failed to install Spotify. Aborting."
+    if ! cargo install spotify_player --locked; then
+        echo "Error: failed to install Spotify player. Aborting."
         exit 1
     fi
 fi
 
-echo "Spotify installed."
+echo "Spotify player installed."

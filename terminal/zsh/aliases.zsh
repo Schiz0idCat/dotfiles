@@ -49,3 +49,6 @@ alias py-venv-off='deactivate'
 
 #=====> docker <=====#
 alias sld='sudo lazydocker'
+
+#=====> spotify <=====#
+alias sp='spotify_player'
