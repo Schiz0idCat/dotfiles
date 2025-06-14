@@ -1,4 +1,4 @@
-local colors = require("palette")
+local colors = require("config.palette")
 local bufferline = require("bufferline")
 
 return {
