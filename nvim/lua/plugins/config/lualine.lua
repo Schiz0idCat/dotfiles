@@ -1,15 +1,5 @@
 local lualine = require("lualine")
 
--- this will be here for when I use noice.nvim
--- local function recording_status()
---     local reg = vim.fn.reg_recording()
---     if reg == "" then
---         return ""
---     else
---         return "REC @" .. reg
---     end
--- end
-
 lualine.setup({
     options = {
         theme = "horizon",
@@ -30,12 +20,13 @@ lualine.setup({
                     newfile = "",
                 },
             },
-            "filesize",
         },
         lualine_x = {
-            -- {
-            --     recording_status
-            -- },
+            {
+                require("noice").api.statusline.mode.get,
+                cond = require("noice").api.statusline.mode.has,
+                color = { fg = "#ff9e64" },
+            },
             "encoding"
         },
         lualine_y = { "filetype" },
