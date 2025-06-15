@@ -34,10 +34,7 @@ tools=(
     "$toolsDir/githubCLI.sh"
     "$toolsDir/npm.sh"
     "$toolsDir/yazi.sh"
-    "$toolsDir/imagemagick.sh"
-    "$toolsDir/fastfetch.sh"
     "$toolsDir/btop.sh"
-    "$toolsDir/spotify-player.sh"
     "$toolsDir/docker.sh"
     "$toolsDir/lazydocker.sh"
 )
