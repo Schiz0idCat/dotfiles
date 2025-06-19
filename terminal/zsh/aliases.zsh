@@ -13,7 +13,7 @@ alias ltla='lsd --tree -la'
 
 #=====> fzf <=====#
 alias fzf="fzf --reverse --style full \
-    --preview 'batcat --color=always --style=numbers {}' \
+    --preview 'cat {}' \
     --bind \"result:transform-list-label:\
         if [[ - \$FZF_QUERY ]]; then \
           echo ' \$FZF_MATCH_COUNT items '; \
