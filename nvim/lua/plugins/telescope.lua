@@ -7,13 +7,31 @@ return {
             "nvim-treesitter/nvim-treesitter",
         },
         config = function()
-            require("plugins.config.telescope")
+            local telescope = require("telescope")
+
+            telescope.setup {
+                defaults = {
+                    layout_config = {
+                        horizontal = { prompt_position = "top" },
+                    },
+                    sorting_strategy = "ascending",
+                },
+            }
         end,
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
         config = function()
-            require("plugins.config.telescope-ui")
+            local telescope = require("telescope")
+            local themes = require("telescope.themes")
+
+            telescope.setup {
+                extensions = {
+                    ["ui-select"] = themes.get_dropdown {},
+                },
+            }
+
+            telescope.load_extension("ui-select")
         end,
     },
 }
