@@ -3,6 +3,7 @@ vim.lsp.enable({
     "clangd",
     "pyright",
     "lua_ls",
+    "rust_analyzer",
 })
 
 -- dinamic diagnostics
