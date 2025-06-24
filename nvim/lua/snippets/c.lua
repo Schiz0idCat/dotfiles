@@ -8,6 +8,10 @@ return {
         t("#include <"), i(0), t(">")
     }),
 
+    s("#define", {
+        t("#define "), i(0)
+    }),
+
     s("main", {
         t({ "int main() {", "\t" }),
         i(0),
