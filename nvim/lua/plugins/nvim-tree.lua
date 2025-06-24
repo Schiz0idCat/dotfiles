@@ -13,7 +13,7 @@ return {
                 enable = true,
             },
             filters = {
-                custom = { "^%.git$" },
+                custom = { ".git" },
             },
             view = {
                 width = {
