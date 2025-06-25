@@ -137,7 +137,7 @@ window#waybar {
 }
 
 #pulseaudio {
-    min-width: 120px;
+    min-width: 110px;
     padding: 0 10px;
     color: @white;
     border-bottom: 2px solid @white;
