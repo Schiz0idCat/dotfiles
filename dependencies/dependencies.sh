@@ -33,7 +33,7 @@ tools=(
     "$toolsDir/lazygit.sh"
     "$toolsDir/githubCLI.sh"
     "$toolsDir/npm.sh"
-    "$toolsDir/yazi.sh"
+    "$toolsDir/superfile.sh"
     "$toolsDir/btop.sh"
 )
 
