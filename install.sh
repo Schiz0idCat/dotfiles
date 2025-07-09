@@ -7,28 +7,27 @@ installDependencies() {
     local entries=("$@")
 
     for entry in "${entries[@]}"; do
-        IFS=':' read -r script maybeSudo <<< "$entry"
+        IFS=':' read -r script flag1 flag2 <<< "$entry"
         chmod +x "$script"
 
-        if [[ "${maybeSudo:-}" == "SUDO" ]]; then
-            sudo bash "$script"
+        local use_sudo=false
+        local use_indent=false
+
+        [[ "$flag1" == "SUDO" || "$flag2" == "SUDO" ]] && use_sudo=true
+        [[ "$flag1" == "EXTRA" || "$flag2" == "EXTRA" ]] && use_indent=true
+
+        if $use_sudo; then
+            if $use_indent; then
+                sudo bash "$script" | sed 's/^/\t/'
+            else
+                sudo bash "$script"
+            fi
         else
-            bash "$script"
-        fi
-    done
-}
-
-installExtraDependencies() {
-    local entries=("$@")
-
-    for entry in "${entries[@]}"; do
-        IFS=':' read -r script maybeSudo <<< "$entry"
-        chmod +x "$script"
-
-        if [[ "${maybeSudo:-}" == "SUDO" ]]; then
-            sudo bash "$script" | sed 's/^/\t/'
-        else
-            bash "$script" | sed 's/^/\t/'
+            if $use_indent; then
+                bash "$script" | sed 's/^/\t/'
+            else
+                bash "$script"
+            fi
         fi
     done
 }
@@ -84,7 +83,7 @@ echo "#==========>   SHELL   <==========#"
 installDependencies "${shell[@]}"
 
 echo -e "\n\t#=====> EXTRAS <=====#"
-installExtraDependencies "${shellExtras[@]}"
+installDependencies "${shellExtras[@]}"
 
 makeLink "${shellLn[@]}"
 echo -e "\nShell config setup."

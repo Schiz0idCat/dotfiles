@@ -54,9 +54,9 @@ shell=(
 )
 
 shellExtras=(
-    "$shellPluginsDir/autosuggestions.sh"
-    "$shellPluginsDir/syntax-highlighting.sh"
-    "$shellPluginsDir/fzf-tab.sh"
+    "$shellPluginsDir/autosuggestions.sh:EXTRA"
+    "$shellPluginsDir/syntax-highlighting.sh:EXTRA"
+    "$shellPluginsDir/fzf-tab.sh:EXTRA"
 )
 
 wm=(
