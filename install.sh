@@ -53,9 +53,6 @@ echo ""
 echo "#==========>   EDITOR   <==========#"
 installDependencies "${editor[@]}"
 
-echo -e "\n\t#=====> EXTRAS <=====#"
-installExtraDependencies "${editorExtras[@]}"
-
 makeLink "${editorLn[@]}"
 echo -e "\nEditor config setup."
 
