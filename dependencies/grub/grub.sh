@@ -24,4 +24,6 @@ grep "GRUB_THEME=" /etc/default/grub >/dev/null 2>&1 && sed -i '/GRUB_THEME=/d' 
 
 echo "GRUB_THEME=\"${GRUB_DIR}/${NAME}/theme.txt\"" >> /etc/default/grub
 
-grub-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg >/dev/null 2>&1
+
+echo "grub config setup."
