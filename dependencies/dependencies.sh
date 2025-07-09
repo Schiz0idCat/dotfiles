@@ -75,7 +75,7 @@ wm=(
 )
 
 other=(
-    "$grubDir/grub.sh"
+    "$grubDir/grub.sh:SUDO"
 )
 
 social=(

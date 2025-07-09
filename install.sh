@@ -4,20 +4,32 @@ set -e
 set -u
 
 installDependencies() {
-    local scripts=("$@")
+    local entries=("$@")
 
-    for script in "${scripts[@]}"; do
+    for entry in "${entries[@]}"; do
+        IFS=':' read -r script maybeSudo <<< "$entry"
         chmod +x "$script"
-        bash "$script"
+
+        if [[ "${maybeSudo:-}" == "SUDO" ]]; then
+            sudo bash "$script"
+        else
+            bash "$script"
+        fi
     done
 }
 
 installExtraDependencies() {
-    local scripts=("$@")
+    local entries=("$@")
 
-    for script in "${scripts[@]}"; do
+    for entry in "${entries[@]}"; do
+        IFS=':' read -r script maybeSudo <<< "$entry"
         chmod +x "$script"
-        bash "$script" | sed 's/^/\t/'
+
+        if [[ "${maybeSudo:-}" == "SUDO" ]]; then
+            sudo bash "$script" | sed 's/^/\t/'
+        else
+            bash "$script" | sed 's/^/\t/'
+        fi
     done
 }
 
