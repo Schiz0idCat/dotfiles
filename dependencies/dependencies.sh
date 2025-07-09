@@ -35,12 +35,11 @@ tools=(
     "$toolsDir/npm.sh"
     "$toolsDir/yazi.sh"
     "$toolsDir/btop.sh"
-    "$toolsDir/docker.sh"
-    "$toolsDir/lazydocker.sh"
 )
 
 fonts=(
     "$fontsDir/jetBrainsMono.sh"
+    "$fontsDir/arimoNerdFont.sh"
 )
 
 terminal=(

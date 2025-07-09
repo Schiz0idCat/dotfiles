@@ -45,7 +45,7 @@
     },
 
     "network": {
-        "format-wifi": "{icon}  {essid}",
+        "format-wifi": "{icon} {essid}",
         "format-ethernet": "󰈀",
         "format-disconnected": "󰤭",
         "linked": "󰌙",
@@ -64,8 +64,8 @@
     },
 
     "pulseaudio": {
-        "format": "{volume}% {icon}  {format_source}",
-        "format-muted": "󰝟  {format_source}",
+        "format": "{volume}% {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
         "format-source": "",
         "format-source-muted": " ",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -79,17 +79,17 @@
     },
 
     "cpu": {
-        "format": "  {usage}%",
+        "format": " {usage}%",
         "tooltip": false
     },
 
     "memory": {
-        "format": "   {}%"
+        "format": " {}%"
     },
 
     "disk": {
         "interval": 60,
-        "format": "  {percentage_free}%"
+        "format": " {percentage_free}%"
     },
 
     "temperature": {

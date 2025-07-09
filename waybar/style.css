@@ -9,7 +9,8 @@
 @define-color blue #61afef;
 
 * {
-    font-size: 20px;
+    font-size: 22px;
+    font-family: "Arimo Nerd Font Propo", sans-serif;
 }
 
 window#waybar {
@@ -43,16 +44,12 @@ window#waybar {
 }
 
 #custom-power {
-    min-width: 22px;
+    min-width: 35px;
     font-size: 25px;
     font-weight: bold;
     color: @blue;
     border: 2px solid @blue;
     border-radius: 50%;
-    margin-right: 7px;
-    margin-left: 3px;
-    padding: 0px 5px;
-    padding-right: 10px;
     padding-bottom: 3px;
 }
 
