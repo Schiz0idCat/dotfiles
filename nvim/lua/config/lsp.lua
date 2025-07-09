@@ -4,6 +4,7 @@ vim.lsp.enable({
     "pyright",
     "lua_ls",
     "rust_analyzer",
+    "jdtls",
 })
 
 -- dinamic diagnostics
