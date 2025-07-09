@@ -77,6 +77,8 @@ installExtraDependencies "${shellExtras[@]}"
 makeLink "${shellLn[@]}"
 echo -e "\nShell config setup."
 
+echo ""
+
 echo "#==========>   TERMINAL   <==========#"
 installDependencies "${terminal[@]}"
 
