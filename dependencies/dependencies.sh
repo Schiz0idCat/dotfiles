@@ -38,6 +38,7 @@ tools=(
 )
 
 fonts=(
+    "$fontsDir/fontconfig.sh"
     "$fontsDir/jetBrainsMono.sh"
     "$fontsDir/arimoNerdFont.sh"
 )
@@ -61,17 +62,19 @@ shellExtras=(
 
 wm=(
     "$wmDir/hyprland.sh"
-    "$wmDir/cursor.sh"
-    "$wmDir/dolphin.sh"
     "$wmDir/hypridle.sh"
     "$wmDir/hyprpaper.sh"
     "$wmDir/hyprshot.sh"
     "$wmDir/hyprsunset.sh"
+    "$wmDir/hypr-portal.sh"
+    "$wmDir/dolphin.sh"
+    "$wmDir/waybar.sh"
+    "$wmDir/wofi.sh"
+    "$wmDir/cursor.sh"
     "$wmDir/swaync.sh"
     "$wmDir/wl-clipboard.sh"
     "$wmDir/qt.sh"
     "$wmDir/sddm.sh"
-    "$wmDir/hypr-portal.sh"
 )
 
 other=(
