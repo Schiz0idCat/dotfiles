@@ -14,6 +14,7 @@ socialDir="dependencies/social"
 lenguages=(
     "$lenguagesDir/gcc.sh"
     "$lenguagesDir/rust.sh"
+    "$lenguagesDir/go.sh"
 )
 
 editor=(
@@ -21,6 +22,7 @@ editor=(
 )
 
 tools=(
+    "$toolsDir/yay.sh"
     "$toolsDir/brightnessctl.sh"
     "$toolsDir/unzip.sh"
     "$toolsDir/curl.sh"
