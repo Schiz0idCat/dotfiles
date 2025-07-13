@@ -20,4 +20,5 @@ shellLn=(
 wmLn=(
     "~/dotfiles/hypr/:~/.config/"
     "~/dotfiles/waybar/:~/.config/"
+    "~/dotfiles/wofi/:~/.config/"
 )
