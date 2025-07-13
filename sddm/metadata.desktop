@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=schiz0id
+Description=schiz0id-theme
+Author=schiz0idcat
+Type=sddm-theme
+Version=1.3
+ConfigFile=./theme.conf
+MainScript=Main.qml
+Theme-Id=sddm-schiz0id-theme
+Theme-API=2.0
+QtVersion=6

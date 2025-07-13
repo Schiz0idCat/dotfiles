@@ -23,3 +23,27 @@ if ! command -v sddm >/dev/null 2>&1; then
     setfacl -m u:sddm:r /home/username/.face.icon
 fi
 echo "sddm installed."
+
+# configuration part
+THEME_NAME="schiz0id"
+THEME_DIR="/usr/share/sddm/themes/$THEME_NAME"
+CONFIG_FILE="/etc/sddm.conf"
+DOTFILES_DIR="$HOME/dotfiles/sddm"
+
+sudo mkdir -p "$THEME_DIR"
+sudo cp -r "$DOTFILES_DIR"/* "$THEME_DIR"
+
+sudo touch "$CONFIG_FILE"
+
+if grep -q "^\[Theme\]" "$CONFIG_FILE"; then
+    sudo sed -i "/^\[Theme\]/,/^\[.*\]/ {s/^Current=.*/Current=$THEME_NAME/}" "$CONFIG_FILE"
+
+    if ! sed -n "/^\[Theme\]/,/^\[.*\]/p" "$CONFIG_FILE" | grep -q "^Current="; then
+        sudo sed -i "/^\[Theme\]/a Current=$THEME_NAME" "$CONFIG_FILE"
+    fi
+else
+    echo -e "\n[Theme]\nCurrent=$THEME_NAME" | sudo tee -a "$CONFIG_FILE" > /dev/null
+fi
+
+sudo systemctl disable display-manager.service 2>/dev/null
+sudo systemctl enable sddm.service &> /dev/null
