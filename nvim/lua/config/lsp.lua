@@ -5,6 +5,7 @@ vim.lsp.enable({
     "lua_ls",
     "rust_analyzer",
     "jdtls",
+    "qmlls",
 })
 
 -- dinamic diagnostics
