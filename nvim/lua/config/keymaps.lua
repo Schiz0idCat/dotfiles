@@ -61,6 +61,11 @@ map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions"
 map("n", "<leader>gf", function()
     vim.lsp.buf.format()
 end, { desc = "Apply format", silent = true })
+map("n", "<leader>ih", function()
+  local bufnr = 0
+  local current = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+  vim.lsp.inlay_hint.enable(not current, { bufnr = bufnr })
+end, { desc = "Toggle inlay hints", silent = true })
 
 ---------->   BUFFERLINE    <----------
 for i = 1, 9 do
