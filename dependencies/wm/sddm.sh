@@ -8,8 +8,6 @@ if ! command -v sddm >/dev/null 2>&1; then
         exit 1
     fi
 
-    sudo systemctl enable sddm.service
-
     # latam keyboard
     XSETUP_PATH="/usr/share/sddm/scripts/Xsetup"
     if ! grep -Fxq "setxkbmap latam" "$XSETUP_PATH"; then
