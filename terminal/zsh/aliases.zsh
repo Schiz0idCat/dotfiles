@@ -46,9 +46,3 @@ prf() {
 #=====> python <=====#
 alias py-venv-on='[ -d .venv ] || python -m venv .venv; source .venv/bin/activate'
 alias py-venv-off='deactivate'
-
-#=====> docker <=====#
-alias sld='sudo lazydocker'
-
-#=====> spotify <=====#
-alias sp='spotify_player'
