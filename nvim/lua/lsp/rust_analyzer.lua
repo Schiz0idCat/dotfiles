@@ -15,6 +15,9 @@ vim.lsp.config('rust_analyzer', {
             procMacro = {
                 enable = true
             },
+            inlay_hints = {
+                auto = true,
+            },
         }
     }
 })
