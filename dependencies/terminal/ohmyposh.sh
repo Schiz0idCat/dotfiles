@@ -4,7 +4,7 @@ if ! command -v oh-my-posh >/dev/null 2>&1; then
     echo "Installing Oh My Posh..."
 
     if ! command -v yay >/dev/null 2>&1; then
-        echo "Error: yay no está instalado. Por favor instala yay primero."
+        echo "Error: yay is not installed."
         exit 1
     fi
 
