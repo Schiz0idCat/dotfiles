@@ -69,6 +69,13 @@ echo -e "\nEditor config setup."
 
 echo ""
 
+echo "#==========>   BROWSER   <==========#"
+installDependencies "${browser[@]}"
+
+echo -e "\nBrowsers installed setup."
+
+echo ""
+
 echo "#==========>   TOOLS   <==========#"
 installDependencies "${tools[@]}"
 

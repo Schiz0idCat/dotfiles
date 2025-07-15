@@ -2,6 +2,7 @@
 
 lenguagesDir="dependencies/lenguages"
 editorDir="dependencies/editor"
+browserDir="dependencies/browser"
 toolsDir="dependencies/tools"
 fontsDir="dependencies/fonts"
 terminalDir="dependencies/terminal"
@@ -19,6 +20,10 @@ lenguages=(
 
 editor=(
     "$editorDir/neovim.sh"
+)
+
+browser=(
+    "$browserDir/brave.sh"
 )
 
 tools=(
