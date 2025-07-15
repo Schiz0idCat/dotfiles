@@ -43,6 +43,7 @@ fonts=(
     "$fontsDir/fontconfig.sh"
     "$fontsDir/jetBrainsMono.sh"
     "$fontsDir/arimoNerdFont.sh"
+    "$fontsDir/opensans.sh"
 )
 
 terminal=(
