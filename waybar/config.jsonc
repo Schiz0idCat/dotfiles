@@ -14,6 +14,7 @@
         "memory",
         "disk",
         "temperature",
+        "bluetooth",
         "network",
     ],
 
@@ -23,7 +24,6 @@
     
     "modules-right": [
         "pulseaudio",
-        "bluetooth",
         "backlight",
         "battery",
         "clock",
