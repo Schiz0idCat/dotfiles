@@ -121,16 +121,17 @@ window#waybar {
 
 #bluetooth {
     min-width: 17px;
-    color: @blue;
-    border-bottom: 2px solid @blue;
+    color: @red;
+    border-bottom: 2px solid @red;
     margin-left: 3px;
     margin-right: 3px;
     padding: 0px 5px;
 }
 
-#bluetooth.off {
-    color: @red;
-    border-bottom: 2px solid @red;
+#bluetooth.connected,
+#bluetooth.on {
+    color: @blue;
+    border-bottom: 2px solid @blue;
 }
 
 #pulseaudio {

@@ -60,6 +60,7 @@
         "format-off": "󰂲",
         "format-connected": "󰂱",
         "format-disabled": "",
+        "format-no-controller": "󰂲",
         "tooltip": false,
     },
 
