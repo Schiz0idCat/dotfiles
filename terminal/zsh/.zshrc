@@ -106,4 +106,5 @@ export EDITOR='nvim'
 #=====> ZOXIDE <=====#
 eval "$(zoxide init --cmd cd zsh)"
 
+#=====> SPOTIFY <=====#
 export PATH=$PATH:/home/demian/.spicetify
