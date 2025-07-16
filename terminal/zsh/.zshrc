@@ -108,3 +108,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 #=====> SPOTIFY <=====#
 export PATH=$PATH:/home/demian/.spicetify
+
+#=====> GO <=====#
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
