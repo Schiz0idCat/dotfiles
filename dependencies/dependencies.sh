@@ -42,6 +42,7 @@ tools=(
     "$toolsDir/npm.sh"
     "$toolsDir/superfile.sh"
     "$toolsDir/btop.sh"
+    "$toolsDir/ncdu.sh"
 )
 
 fonts=(
