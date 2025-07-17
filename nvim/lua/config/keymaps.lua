@@ -29,7 +29,7 @@ map("v", "<leader>(", "c(<C-r>\")<Esc>", { noremap = true, silent = true })
 map('n', '<leader>qq', ':bd<CR>', { desc = 'Close current buffer', silent = true })
 map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save file", silent = true })
 
-map('n', '<C-a>', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
+map('n', '<leader>a', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
 
 map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]], { desc = "Replace in buffer", silent = true })
 map("n", "<leader>rp", function()
