@@ -2,13 +2,6 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 
 ---------->   GENERAL   <----------
--- windows navigation
--- local opts = { noremap = true, silent = true, desc = "Window navigation" }
--- map("n", "<C-h>", "<C-w>h", opts)
--- map("n", "<C-j>", "<C-w>j", opts)
--- map("n", "<C-k>", "<C-w>k", opts)
--- map("n", "<C-l>", "<C-w>l", opts)
-
 -- code movement
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move a piece of code", silent = true })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move a piece of code", silent = true })
