@@ -3,7 +3,6 @@
 DEPENDENCIES=(
     qt6-base
     qt6-svg
-    qt6-virtualkeyboard
     qt6-multimedia-ffmpeg
 )
 
