@@ -35,6 +35,24 @@ map("n", "<leader>rp", function()
     vim.cmd("cclose")
 end, { desc = "Replace in proyect", noremap = true, silent = true })
 
+-- snippets
+local luasnip = require("luasnip")
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+    if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+    else
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n", true)
+    end
+end, { desc = "Jump forward in snippet" })
+
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+    if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+    else
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), "n", true)
+    end
+end, { desc = "Jump backward in snippet" })
+
 ---------->   TELESCOPE   <----------
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files", silent = true })
