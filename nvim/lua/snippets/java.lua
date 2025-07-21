@@ -35,7 +35,11 @@ return {
     }),
 
     s("for", {
-        t("for ("), i(1, "int i = 0"), t("; "), i(2, "i < n"), t("; "), i(3, "i++"), t({ ") {", "\t" }),
+        t("for ("),
+        i(1, "init-statement"), t("; "),
+        i(2, "condition"), t("; "),
+        i(3, "inc-expression"),
+        t({ ") {", "\t" }),
         i(0),
         t({ "", "}" }),
     }),
