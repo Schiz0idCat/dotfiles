@@ -22,7 +22,7 @@
     },
 
     "clock": {
-        "format": "{:%d-%m-%y %H:%M}  ",
+        "format": "{:%d-%m-%y %I:%M}  ",
         "tooltip": false,
     },
 
