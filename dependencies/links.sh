@@ -26,3 +26,7 @@ wmLn=(
 toolsLn=(
     "~/dotfiles/superfile/:~/.config/"
 )
+
+otherLn=(
+    "~/dotfiles/fontconfig/:~/.config/"
+)

@@ -118,8 +118,10 @@ echo ""
 
 echo "#==========>   OTHER   <==========#"
 installDependencies "${other[@]}"
-
 echo -e "\nOther configs setup."
+
+makeLink "${otherLn[@]}"
+echo -e "\nOther links setup."
 
 echo ""
 

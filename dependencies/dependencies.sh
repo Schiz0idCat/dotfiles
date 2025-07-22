@@ -50,6 +50,7 @@ fonts=(
     "$fontsDir/jetBrainsMono.sh"
     "$fontsDir/arimoNerdFont.sh"
     "$fontsDir/opensans.sh"
+    "$fontsDir/notoFonts.sh"
 )
 
 terminal=(
