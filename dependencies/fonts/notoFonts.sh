@@ -16,6 +16,6 @@ for pkg in "${FONT_PACKAGES[@]}"; do
             exit 1
         fi
     else
-        echo "$pkg is already installed."
+        echo "$pkg installed."
     fi
 done
