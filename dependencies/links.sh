@@ -27,6 +27,6 @@ toolsLn=(
     "~/dotfiles/superfile/:~/.config/"
 )
 
-otherLn=(
+fontLn=(
     "~/dotfiles/fontconfig/:~/.config/"
 )

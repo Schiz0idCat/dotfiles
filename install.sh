@@ -87,6 +87,9 @@ echo ""
 echo "#==========>   FONTS   <==========#"
 installDependencies "${fonts[@]}"
 
+makeLink "${fontLn[@]}"
+echo -e "\nFont link setup."
+
 echo ""
 
 echo "#==========>   SHELL   <==========#"
@@ -119,9 +122,6 @@ echo ""
 echo "#==========>   OTHER   <==========#"
 installDependencies "${other[@]}"
 echo -e "\nOther configs setup."
-
-makeLink "${otherLn[@]}"
-echo -e "\nOther links setup."
 
 echo ""
 
