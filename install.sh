@@ -79,6 +79,9 @@ echo ""
 echo "#==========>   TOOLS   <==========#"
 installDependencies "${tools[@]}"
 
+makeLink "${toolsLn[@]}"
+echo -e "\nTools config setup."
+
 echo ""
 
 echo "#==========>   FONTS   <==========#"

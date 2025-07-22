@@ -22,3 +22,7 @@ wmLn=(
     "~/dotfiles/waybar/:~/.config/"
     "~/dotfiles/wofi/:~/.config/"
 )
+
+toolsLn=(
+    "~/dotfiles/superfile/:~/.config/"
+)
