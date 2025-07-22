@@ -19,23 +19,11 @@ map("v", "<leader>{", "c{<C-r>\"}<Esc>", { noremap = true, silent = true })
 map("v", "<leader>[", "c[<C-r>\"]]<Esc>", { noremap = true, silent = true })
 map("v", "<leader>(", "c(<C-r>\")<Esc>", { noremap = true, silent = true })
 
-map('n', '<leader>qq', ':bd<CR>', { desc = 'Close current buffer', silent = true })
 map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save file", silent = true })
 
 map('n', '<leader>a', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
 
-map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]], { desc = "Replace in buffer", silent = true })
-map("n", "<leader>rp", function()
-    local word = vim.fn.input("Search: ")
-    local replacement = vim.fn.input("Replace: ")
-    if word == "" then return end
-    vim.cmd("vimgrep /" .. word .. "/ `find . -type f`")
-    vim.cmd("copen")
-    vim.cmd("cdo %s/" .. word .. "/" .. replacement .. "/gc")
-    vim.cmd("cclose")
-end, { desc = "Replace in proyect", noremap = true, silent = true })
-
--- snippets
+---------->   SNIPPETS   <----------
 local luasnip = require("luasnip")
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
     if luasnip.expand_or_jumpable() then
@@ -78,6 +66,19 @@ map("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not current, { bufnr = bufnr })
 end, { desc = "Toggle inlay hints", silent = true })
 
+---------->   LSP RELATED   <----------
+-- rename
+map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]], { desc = "Replace in buffer", silent = true })
+map("n", "<leader>rp", function()
+    local word = vim.fn.input("Search: ")
+    local replacement = vim.fn.input("Replace: ")
+    if word == "" then return end
+    vim.cmd("vimgrep /" .. word .. "/ `find . -type f`")
+    vim.cmd("copen")
+    vim.cmd("cdo %s/" .. word .. "/" .. replacement .. "/gc")
+    vim.cmd("cclose")
+end, { desc = "Replace in proyect", noremap = true, silent = true })
+
 ---------->   BUFFERLINE    <----------
 for i = 1, 9 do
     map('n', '<leader>' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>', { desc = "[1-9] go to buffer", silent = true })
@@ -93,6 +94,7 @@ for i = 1, 9 do
         end)
     end, { desc = "[1-9] Close buffer ", silent = true })
 end
+map('n', '<leader>qq', ':bd<CR>', { desc = 'Close current buffer', silent = true })
 
 ---------->   git   <----------
 map("n", "<leader>gc", ":Gitsigns preview_hunk_inline<CR>", { desc = "show git changes", silent = true })
