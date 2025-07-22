@@ -59,6 +59,8 @@ echo ""
 echo "#==========>   LENGUAGES   <==========#"
 installDependencies "${lenguages[@]}"
 
+echo -e "\nLenguages installed."
+
 echo ""
 
 echo "#==========>   EDITOR   <==========#"
