@@ -25,7 +25,7 @@ map('n', '<leader>a', ':%y+<CR>', { noremap = true, silent = true, desc = "copy 
 
 ---------->   SNIPPETS   <----------
 local luasnip = require("luasnip")
-vim.keymap.set({ "i", "s" }, "<Tab>", function()
+map({ "i", "s" }, "<Tab>", function()
     if luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
     else
@@ -33,7 +33,7 @@ vim.keymap.set({ "i", "s" }, "<Tab>", function()
     end
 end, { desc = "Jump forward in snippet" })
 
-vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+map({ "i", "s" }, "<S-Tab>", function()
     if luasnip.jumpable(-1) then
         luasnip.jump(-1)
     else
@@ -66,7 +66,6 @@ map("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not current, { bufnr = bufnr })
 end, { desc = "Toggle inlay hints", silent = true })
 
----------->   LSP RELATED   <----------
 -- rename
 map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]], { desc = "Replace in buffer", silent = true })
 map("n", "<leader>rp", function()
@@ -78,6 +77,12 @@ map("n", "<leader>rp", function()
     vim.cmd("cdo %s/" .. word .. "/" .. replacement .. "/gc")
     vim.cmd("cclose")
 end, { desc = "Replace in proyect", noremap = true, silent = true })
+
+-- diagnostics
+map("n", "<leader>df", function()
+  vim.diagnostic.open_float(nil, { border = "rounded" })
+end, { desc = "Open floating diagnostics" })
+map("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Show diagnostics list" })
 
 ---------->   BUFFERLINE    <----------
 for i = 1, 9 do
