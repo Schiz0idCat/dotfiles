@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+TARGET="${ZSH_CUSTOM:-$HOME/.config/oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
 if [ ! -d "$TARGET" ]; then
     echo "Installing zsh-autosuggestions..."

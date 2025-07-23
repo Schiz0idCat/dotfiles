@@ -2,7 +2,7 @@ export PATH="$PATH:$HOME/.local/bin"
 
 #=====> ZSH <=====#
 # oh-my-zsh
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/oh-my-zsh"
 
 #=====> XDG BASE DIRECTORY <=====#
 export XDG_CONFIG_HOME="$HOME/.config"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+TARGET="${ZSH_CUSTOM:-$HOME/.config/oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 
 if [ ! -d "$TARGET" ]; then
     echo "Installing zsh-syntax-highlighting..."

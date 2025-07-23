@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fzf-tab"
+TARGET="${ZSH_CUSTOM:-$HOME/.config/oh-my-zsh/custom}/plugins/fzf-tab"
 
 if [ ! -d "$TARGET" ] >/dev/null 2>&1; then
     echo "Installing fzf-tab..."
