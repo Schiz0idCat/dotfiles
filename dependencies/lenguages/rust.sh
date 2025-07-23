@@ -26,4 +26,6 @@ if ! cargo install-update -V >/dev/null 2>&1; then
 fi
 echo "cargo-update installed."
 
-rm ~/.profile
+if [ -f "$HOME/.profile" ]; then
+  rm "$HOME/.profile"
+fi
