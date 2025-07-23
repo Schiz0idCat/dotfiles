@@ -44,6 +44,7 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end,
 })
 
+-- diagnostics text with transparent background
 vim.cmd [[
   hi DiagnosticVirtualTextError guibg=NONE ctermbg=NONE
   hi DiagnosticVirtualTextWarn  guibg=NONE ctermbg=NONE
