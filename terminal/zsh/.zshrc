@@ -29,12 +29,50 @@ source $ZSH/oh-my-zsh.sh
 #=====> OHMYPOSH <=====#
 eval "$(oh-my-posh init zsh --config $HOME/dotfiles/terminal/ohmyposh/ohmyposhrc.toml)"
 
+
+#=====> GENERAL <=====#
+export EDITOR='nvim'
+
+# XDG standard - URL:
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export PATH="$CARGO_HOME/bin:$PATH"
+
+export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
+export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
+export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
+
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
+
+export MAVEN_OPTS="-Dmaven.repo.local=$XDG_DATA_HOME/maven/repository"
+export MAVEN_ARGS="--settings $XDG_CONFIG_HOME/maven/settings.xml"
+
+export PATH=$PATH:$HOME/.config/spicetify
+export SPICETIFY_CONFIG_HOME="$HOME/.config/spicetify"
+
+[ -d "$XDG_STATE_HOME/zsh" ] || mkdir -p "$XDG_STATE_HOME/zsh"
+HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
+
+[ -d "$XDG_CACHE_HOME/zsh" ] || mkdir -p "$XDG_CACHE_HOME/zsh"
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
+
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+
 #=====> HISTORY <=====#
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
 
 HISTSIZE=5000
-HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
@@ -44,6 +82,8 @@ setopt hist_ignore_space # it doesn't work, fix it later
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
+
+export HISTFILE
 
 #=====> FZF <=====#
 eval "$(fzf --zsh)"
@@ -100,15 +140,5 @@ export FZF_ALT_C_OPTS='
   --color="input-border:#996666,input-label:#ffcccc"
   --bind "change:top"'
 
-#=====> YAZI <=====#
-export EDITOR='nvim'
-
 #=====> ZOXIDE <=====#
 eval "$(zoxide init --cmd cd zsh)"
-
-#=====> SPOTIFY <=====#
-export PATH=$PATH:/home/demian/.spicetify
-
-#=====> GO <=====#
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
