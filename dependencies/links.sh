@@ -13,7 +13,7 @@ terminalLn=(
 )
 
 shellLn=(
-    "~/dotfiles/terminal/zsh/.zshenv:~/.config/zsh/"
+    "~/dotfiles/terminal/zsh/.zshenv:~/"
     "~/dotfiles/terminal/zsh/.zshrc:~/.config/zsh/"
     "~/dotfiles/terminal/zsh/aliases.zsh:~/.config/oh-my-zsh/custom/aliases.zsh"
 )
