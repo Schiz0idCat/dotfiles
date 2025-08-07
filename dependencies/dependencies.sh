@@ -43,6 +43,7 @@ tools=(
     "$toolsDir/superfile.sh"
     "$toolsDir/btop.sh"
     "$toolsDir/ncdu.sh"
+    "$toolsDir/libreOffice.sh"
 )
 
 fonts=(
