@@ -26,6 +26,7 @@ wmLn=(
 
 toolsLn=(
     "~/dotfiles/superfile/:~/.config/"
+    "~/dotfiles/mpv/:~/.config/"
 )
 
 fontLn=(

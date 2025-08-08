@@ -44,6 +44,7 @@ tools=(
     "$toolsDir/btop.sh"
     "$toolsDir/ncdu.sh"
     "$toolsDir/libreOffice.sh"
+    "$toolsDir/mpv.sh"
 )
 
 fonts=(
