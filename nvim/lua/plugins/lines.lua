@@ -21,6 +21,9 @@ return {
             virt_column.setup({
                 virtcolumn = "120",
                 char = "│",
+                exclude = {
+                    filetypes = { "markdown", "text" },
+                },
             })
         end,
     },
