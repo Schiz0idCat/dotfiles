@@ -91,3 +91,6 @@ export FZF_ALT_C_OPTS='
   --color="preview-border:#e6c87c,preview-label:#fff0b3"
   --color="input-border:#996666,input-label:#ffcccc"
   --bind "change:top"'
+
+# test
+export PATH="$PATH:$HOME/dev/life/target/release"
