@@ -8,6 +8,10 @@ vim.lsp.enable({
     "qmlls",
 })
 
+-- enviroment variables
+-- java
+vim.uv.os_setenv("JAVA_HOME", "/usr/lib/jvm/java-24-openjdk")
+
 -- dinamic diagnostics
 vim.diagnostic.config({
     underline = true,
