@@ -106,6 +106,9 @@ return {
                     },
                     {
                         { name = "cmdline" },
+                    },
+                    {
+                        { name = "render-markdown" },
                     }),
             })
 
