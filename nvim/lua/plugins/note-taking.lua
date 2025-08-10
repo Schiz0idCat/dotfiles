@@ -21,5 +21,16 @@ return {
                 { path = "~/vimwiki", syntax = "markdown", ext = ".md" }
             }
         end
-    }
+    },
+    {
+        "folke/snacks.nvim",
+        opts = {
+            image = {
+                doc = {
+                    max_width = 40,
+                    max_height = 20,
+                }
+            }
+        }
+    },
 }
