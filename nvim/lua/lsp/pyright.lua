@@ -1,5 +1,5 @@
 return {
-    on_attach = function(client, bufnr)
+    on_attach = function()
     end,
     settings = {
         python = {

@@ -38,7 +38,7 @@ return {
                     },
                 },
                 formatting = {
-                    format = function(entry, item)
+                    format = function(_, item)
                         local kind_icons = {
                             Text = "",
                             Method = "",
