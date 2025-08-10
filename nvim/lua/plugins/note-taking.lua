@@ -5,9 +5,9 @@ return {
     ---@type render.md.UserConfig
     config = function()
         require('render-markdown').setup({
-            callout = {
-                note = { raw = '[!IDEA]', rendered = '󰛨 Idea', highlight = 'RenderMarkdownSuccess', category = 'personal' },
-            }
+            -- callout = {
+            --     idea = { raw = '[!IDEA]', rendered = '󰛨 Idea', highlight = 'RenderMarkdownSuccess', category = 'personal' },
+            -- }
         })
     end
 }
