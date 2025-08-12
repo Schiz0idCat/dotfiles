@@ -22,7 +22,7 @@ return {
                 virtcolumn = "120",
                 char = "│",
                 exclude = {
-                    filetypes = { "markdown", "text" },
+                    filetypes = { "markdown", "text", "vimwiki" },
                 },
             })
         end,
