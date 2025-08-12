@@ -41,6 +41,10 @@ export SPICETIFY_CONFIG_HOME="$HOME/.config/spicetify"
 # editor
 export EDITOR='nvim'
 
+# cursor
+export XCURSOR_THEME=capitaine-cursors
+export XCURSOR_SIZE=32
+
 # fzf
 export FZF_CTRL_T_COMMAND='fd --type f'
 export FZF_CTRL_T_OPTS='
