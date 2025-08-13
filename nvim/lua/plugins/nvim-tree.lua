@@ -18,7 +18,7 @@ return {
             view = {
                 width = {
                     min = 0,
-                    max = 60,
+                    max = 35,
                     padding = 2,
                 },
                 preserve_window_proportions = true,
