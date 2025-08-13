@@ -27,8 +27,8 @@ return {
         opts = {
             image = {
                 doc = {
-                    max_width = 40,
-                    max_height = 20,
+                    max_width = 50,
+                    max_height = 30,
                 }
             }
         }
