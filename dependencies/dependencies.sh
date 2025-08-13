@@ -75,6 +75,7 @@ shellExtras=(
 wm=(
     "$wmDir/hyprland.sh"
     "$wmDir/hypridle.sh"
+    "$wmDir/hyprlock.sh"
     "$wmDir/hyprpaper.sh"
     "$wmDir/hyprshot.sh"
     "$wmDir/hyprsunset.sh"
