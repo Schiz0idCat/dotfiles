@@ -124,7 +124,25 @@ return {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = function()
-            require("nvim-autopairs").setup()
+            local npairs = require("nvim-autopairs")
+            local Rule = require("nvim-autopairs.rule")
+
+            npairs.setup({
+                check_ts = true,
+                filetypes = { "markdown", "txt", "vimwiki" },
+            })
+
+            -- Insert mode: auto-pair for *
+            npairs.add_rules {
+                Rule("*", "*", { "markdown", "txt", "vimwiki" })
+                    :use_regex(false)
+                    :replace_endpair(function()
+                        return "*"
+                    end)
+                    :with_move(function(opts)
+                        return opts.prev_char:match("%*%*") ~= nil
+                    end)
+            }
         end,
     },
     {

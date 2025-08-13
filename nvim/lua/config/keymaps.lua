@@ -18,6 +18,8 @@ map('n', '<M-O>', 'O<Esc>O<Esc>^i', { desc = 'Insert 2 lines above', noremap = t
 map("v", "<leader>{", "c{<C-r>\"}<Esc>", { noremap = true, silent = true })
 map("v", "<leader>[", "c[<C-r>\"]]<Esc>", { noremap = true, silent = true })
 map("v", "<leader>(", "c(<C-r>\")<Esc>", { noremap = true, silent = true })
+map("v", "<leader>*", "c*<C-r>\"*<Esc>", { noremap = true, silent = true })
+map("v", "<leader>2*", "c**<C-r>\"**<Esc>", { noremap = true, silent = true })
 
 map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save file", silent = true })
 
