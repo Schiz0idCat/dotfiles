@@ -21,9 +21,9 @@ opt.winborder = "rounded"
 ---------->   AUTOCOMMANDS   <----------
 -- no numbers when is a {pattern} file type
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown", "text" },
-  callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-  end,
+    pattern = { "markdown", "text" },
+    callback = function()
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+    end,
 })
