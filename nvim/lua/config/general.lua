@@ -15,6 +15,9 @@ opt.relativenumber = true
 opt.signcolumn = "yes"
 opt.scrolloff = 5
 
+---------->   WINDOWS   <----------
+opt.winborder = "rounded"
+
 -- no numbers when is a {pattern} file type
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "markdown", "text" },
