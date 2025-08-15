@@ -7,6 +7,9 @@ return {
                 -- lenguague: rust
                 ["@lsp.typemod.variable.mutable.rust"] = { underline = true },
 
+                -- lenguague: java
+                ["@lsp.type.modifier.java"] = { fg = "${purple}" },
+
                 -- plugin: gitsigns
                 GitSignsAdd = { fg = "${green}" },
                 GitSignsChange = { fg = "${yellow}" },
