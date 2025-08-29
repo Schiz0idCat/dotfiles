@@ -7,7 +7,7 @@ uniform sampler2D tex;
 
 out vec4 fragColor;
 
-const float SATURATION_FACTOR = 2.0; // The factor must be an explicit float (e.g. 2.0, not 2)
+const float SATURATION_FACTOR = 2.5; // The factor must be an explicit float (e.g. 2.0, not 2)
 const vec3 LUMINANCE_WEIGHTS = vec3(0.299, 0.587, 0.114);
 
 void main() {
