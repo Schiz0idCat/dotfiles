@@ -4,16 +4,17 @@ export PATH="$PATH:$HOME/.local/bin"
 # oh-my-zsh
 export ZSH="$HOME/.config/oh-my-zsh"
 
+# zsh
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
+
 #=====> XDG BASE DIRECTORY <=====#
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# zsh
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
-
+#=====> PROGRAMMING <=====#
 # rust
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
@@ -28,15 +29,6 @@ export PATH="$PATH:$GOPATH/bin"
 export MAVEN_OPTS="-Dmaven.repo.local=$XDG_DATA_HOME/maven/repository"
 export MAVEN_ARGS="--settings $XDG_CONFIG_HOME/maven/settings.xml"
 
-# cups
-export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
-export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
-export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
-
-# spicetify
-export PATH="$PATH:$HOME/.config/spicetify"
-export SPICETIFY_CONFIG_HOME="$HOME/.config/spicetify"
-
 #=====> GENERAL <=====#
 # editor
 export EDITOR='nvim'
@@ -44,6 +36,16 @@ export EDITOR='nvim'
 # cursor
 export XCURSOR_THEME=capitaine-cursors
 export XCURSOR_SIZE=32
+
+#=====> OTHER <=====#
+# cups (printer)
+export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
+export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
+export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
+
+# spicetify
+export PATH="$PATH:$HOME/.config/spicetify"
+export SPICETIFY_CONFIG_HOME="$HOME/.config/spicetify"
 
 # fzf
 export FZF_CTRL_T_COMMAND='fd --type f'
@@ -95,6 +97,3 @@ export FZF_ALT_C_OPTS='
   --color="preview-border:#e6c87c,preview-label:#fff0b3"
   --color="input-border:#996666,input-label:#ffcccc"
   --bind "change:top"'
-
-# test
-export PATH="$PATH:$HOME/dev/life/target/release"
