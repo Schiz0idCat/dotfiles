@@ -10,6 +10,7 @@ return {
 
                 callout = {
                     idea = { raw = '[!IDEA]', rendered = '󰛨 Idea', highlight = 'RenderMarkdownSuccess', category = 'personal' },
+                    extra = { raw = '[!EXTRA]', rendered = '󱞁 Extra', highlight = 'RenderMarkdownWarn', category = 'personal' },
                 }
             })
         end
@@ -27,7 +28,7 @@ return {
         opts = {
             image = {
                 doc = {
-                    max_width = 50,
+                    max_width = 80,
                     max_height = 30,
                 }
             }
