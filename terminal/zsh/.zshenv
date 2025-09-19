@@ -29,6 +29,9 @@ export PATH="$PATH:$GOPATH/bin"
 export MAVEN_OPTS="-Dmaven.repo.local=$XDG_DATA_HOME/maven/repository"
 export MAVEN_ARGS="--settings $XDG_CONFIG_HOME/maven/settings.xml"
 
+# npm
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
 #=====> GENERAL <=====#
 # editor
 export EDITOR='nvim'
