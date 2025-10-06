@@ -55,7 +55,3 @@ vim.cmd [[
   hi DiagnosticVirtualTextHint  guibg=NONE ctermbg=NONE
   hi DiagnosticVirtualTextInfo  guibg=NONE ctermbg=NONE
 ]]
-
--- floating diagnostic windows
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1f2329" }) -- popup background
-vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#7a818e", bg = "#1f2329" }) -- border color
