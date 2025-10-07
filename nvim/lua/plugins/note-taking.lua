@@ -21,6 +21,16 @@ return {
             vim.g.vimwiki_list = {
                 { path = "~/vimwiki", syntax = "markdown", ext = ".md" }
             }
+
+            -- checkmate compatibility
+            vim.api.nvim_create_autocmd("BufReadPost", {
+                pattern = { "todo.md", "*.todo" },
+                callback = function()
+                    vim.schedule(function()
+                        vim.bo.filetype = "markdown"
+                    end)
+                end,
+            })
         end
     },
     {
@@ -34,4 +44,9 @@ return {
             }
         }
     },
+    {
+        "bngarren/checkmate.nvim",
+        ft = "markdown",
+        opts = {},
+    }
 }
