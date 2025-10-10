@@ -40,7 +40,6 @@ tools=(
     "$toolsDir/lazygit.sh"
     "$toolsDir/githubCLI.sh"
     "$toolsDir/npm.sh"
-    "$toolsDir/superfile.sh"
     "$toolsDir/btop.sh"
     "$toolsDir/ncdu.sh"
     "$toolsDir/libreOffice.sh"
