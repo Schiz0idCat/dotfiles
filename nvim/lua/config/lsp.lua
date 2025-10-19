@@ -6,6 +6,9 @@ vim.lsp.enable({
     "rust_analyzer",
     "jdtls",
     "qmlls",
+    "vtsls",
+    "html",
+    "cssls",
 })
 
 -- enviroment variables
