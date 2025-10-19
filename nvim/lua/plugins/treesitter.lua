@@ -35,5 +35,18 @@ return {
             line_numbers = true,
             mode = "cursor",
         })
+
+        -- Auto-indent for HTML when I embebed JS and CSS
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = { "html", "javascript", "css" },
+            callback = function()
+                local opts = vim.opt_local
+                opts.autoindent = true
+                opts.smartindent = true
+                opts.expandtab = true
+                opts.shiftwidth = 4
+                opts.tabstop = 4
+            end,
+        })
     end,
 }
