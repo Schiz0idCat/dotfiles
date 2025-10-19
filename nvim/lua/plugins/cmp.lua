@@ -91,7 +91,7 @@ return {
                             return not excluded_kinds[kind_name]
                         end,
                     },
-                    { name = "luasnip" },
+                    { name = "luasnip", priority = 1000 },
                     { name = "path" },
                     { name = "buffer" },
                 }),
@@ -143,6 +143,20 @@ return {
                         return opts.prev_char:match("%*%*") ~= nil
                     end)
             }
+        end,
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        wants = "nvim-treesitter",
+        event = "InsertEnter",
+        config = function()
+            require('nvim-ts-autotag').setup({
+                opts = {
+                    enable_close = true,
+                    enable_rename = true,
+                    enable_close_on_slash = false,
+                },
+            })
         end,
     },
     {
