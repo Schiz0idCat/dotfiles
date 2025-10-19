@@ -25,6 +25,8 @@ map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save fi
 
 map('n', '<leader>a', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
 
+map({ "n", "v" }, "E", "ge", { noremap = true, silent = true, desc = "Move to the end of the previous word" })
+
 ---------->   SNIPPETS   <----------
 local luasnip = require("luasnip")
 map({ "i", "s" }, "<Tab>", function()
@@ -78,7 +80,7 @@ map("n", "<leader>rp", function()
     vim.cmd("copen")
     vim.cmd("cdo %s/" .. word .. "/" .. replacement .. "/gc")
     vim.cmd("cclose")
-end, { desc = "Replace in proyect", noremap = true, silent = true })
+end, { desc = "Replace in project", noremap = true, silent = true })
 
 -- diagnostics
 map("n", "<leader>df", function()
@@ -106,3 +108,34 @@ map('n', '<leader>qq', ':bd<CR>', { desc = 'Close current buffer', silent = true
 ---------->   git   <----------
 map("n", "<leader>gc", ":Gitsigns preview_hunk_inline<CR>", { desc = "show git changes", silent = true })
 map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "toggle blame", silent = true })
+
+---------->   WEB   <----------
+map('n', '<Leader>ls', '', {
+    desc = "live server project",
+    noremap = true,
+    silent = true,
+    callback = function()
+        local project_dir = vim.fn.getcwd()
+
+        vim.fn.jobstart({
+            'npx', 'live-server', '--quiet', '--port=8080', '--watch=*.html,*.css,*.js'
+        }, {cwd = project_dir, detach = true})
+        vim.fn.system('xdg-open http://127.0.0.1:8080/index.html')
+    end
+})
+
+map('n', '<Leader>lsc', '', {
+    desc = "live server current buffer",
+    noremap = true,
+    silent = true,
+    callback = function()
+        local project_dir = vim.fn.getcwd()
+        local file_path = vim.api.nvim_buf_get_name(0)
+        local rel_path = file_path:gsub("^" .. project_dir .. "/", "")
+
+        vim.fn.jobstart({
+            'npx', 'live-server', '--quiet', '--port=8080', '--watch=*.html,*.css,*.js'
+        }, {cwd = project_dir, detach = true})
+        vim.fn.system('xdg-open http://127.0.0.1:8080/' .. rel_path)
+    end
+})
