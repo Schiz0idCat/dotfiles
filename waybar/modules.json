@@ -18,7 +18,8 @@
     "custom/power": {
         "format": "󰣇",
         "tooltip": false,
-        "on-click": "systemctl poweroff"
+        "on-click": "systemctl poweroff",
+        "on-click-right": "systemctl hibernate"
     },
 
     "clock": {
