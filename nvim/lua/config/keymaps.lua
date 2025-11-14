@@ -27,6 +27,10 @@ map('n', '<leader>a', ':%y+<CR>', { noremap = true, silent = true, desc = "copy 
 
 map({ "n", "v" }, "E", "ge", { noremap = true, silent = true, desc = "Move to the end of the previous word" })
 
+map('n', '<C-z>', '<Nop>')
+map('i', '<C-z>', '<Nop>')
+map('v', '<C-z>', '<Nop>')
+
 ---------->   SNIPPETS   <----------
 local luasnip = require("luasnip")
 map({ "i", "s" }, "<Tab>", function()
