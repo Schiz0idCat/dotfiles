@@ -1,9 +1,11 @@
 return {
     {
-        "mason-org/mason.nvim", -- packer manager
-        config = function()
-            require("mason").setup()
-        end,
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
     },
     {
         'nvimtools/none-ls.nvim',
