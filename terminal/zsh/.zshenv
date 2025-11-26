@@ -34,6 +34,11 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 # npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
+# dotnet
+export PATH="$PATH:$XDG_DATA_HOME/dotnet/tools"
+export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
+export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
+
 #=====> GENERAL <=====#
 # editor
 export EDITOR='nvim'
