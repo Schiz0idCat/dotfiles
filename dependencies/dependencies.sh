@@ -13,7 +13,6 @@ grubDir="dependencies/grub"
 socialDir="dependencies/social"
 
 lenguages=(
-    "$lenguagesDir/gcc.sh"
     "$lenguagesDir/rust.sh"
     "$lenguagesDir/go.sh"
 )
