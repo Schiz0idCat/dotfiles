@@ -39,6 +39,9 @@ export PATH="$PATH:$XDG_DATA_HOME/dotnet/tools"
 export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
 
+# python
+export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
+
 #=====> GENERAL <=====#
 # editor
 export EDITOR='nvim'
