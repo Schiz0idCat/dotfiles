@@ -6,6 +6,12 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+#=====> OTHER <=====#
+# cups (printer)
+export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
+export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
+export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
+
 #=====> ZSH <=====#
 # oh-my-zsh
 export ZSH="$HOME/.config/oh-my-zsh"
@@ -51,11 +57,6 @@ export XCURSOR_THEME=capitaine-cursors
 export XCURSOR_SIZE=32
 
 #=====> OTHER <=====#
-# cups (printer)
-export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
-export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
-export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
-
 # spicetify
 export PATH="$PATH:$HOME/.config/spicetify"
 export SPICETIFY_CONFIG_HOME="$HOME/.config/spicetify"
