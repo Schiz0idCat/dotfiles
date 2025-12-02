@@ -8,16 +8,14 @@ return {
         },
     },
     {
-        'nvimtools/none-ls.nvim',
+        'stevearc/conform.nvim',
+        opts = {},
+
         config = function()
-            local null_ls = require("null-ls")
-            null_ls.setup({
-                sources = {
-                    null_ls.builtins.formatting.clang_format,
-                    null_ls.builtins.formatting.shfmt,
-                    null_ls.builtins.formatting.yapf,
-                    null_ls.builtins.formatting.isort,
-                    null_ls.builtins.formatting.stylua,
+            require("conform").setup({
+                format_on_save = {
+                    timeout_ms = 500,
+                    lsp_format = "fallback",
                 },
             })
         end
