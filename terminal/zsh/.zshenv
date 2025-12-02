@@ -39,6 +39,8 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 # npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_TMP="$XDG_CACHE_HOME/npm/tmp"
 
 # dotnet
 export PATH="$PATH:$XDG_DATA_HOME/dotnet/tools"
