@@ -8,8 +8,7 @@ editorLn=(
 terminalLn=(
     "~/.local/kitty.app/bin/kitty:/usr/local/bin/kitty:SUDO"
     "~/.local/kitty.app/bin/kitten:/usr/local/bin/kitten:SUDO"
-    "~/dotfiles/terminal/kitty/kitty.conf:~/.config/kitty/kitty.conf"
-    "~/dotfiles/terminal/kitty/theme.conf:~/.config/kitty/theme.conf"
+    "~/dotfiles/terminal/kitty/:~/.config/"
 )
 
 shellLn=(
