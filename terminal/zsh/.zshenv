@@ -21,6 +21,13 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 
 #=====> PROGRAMMING <=====#
+# git
+export GIT_CONFIG_HOME="$XDG_CONFIG_HOME/git"
+export GIT_IGNORE="$XDG_CONFIG_HOME/git/ignore"
+export GIT_ATTRIBUTES="$XDG_CONFIG_HOME/git/attributes"
+export GIT_CREDENTIALS="$XDG_CONFIG_HOME/git/credentials"
+export GIT_K="$XDG_CONFIG_HOME/git/gitk"
+
 # rust
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
