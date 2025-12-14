@@ -46,3 +46,6 @@ prf() {
 #=====> python <=====#
 alias py-venv-on='[ -d .venv ] || python -m venv .venv; source .venv/bin/activate'
 alias py-venv-off='deactivate'
+
+#=====> MY PROGRAMS <=====#
+alias wf="~/dotfiles/terminal/kitty/scripts/work_flow.sh"
