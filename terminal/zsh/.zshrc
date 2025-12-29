@@ -1,11 +1,4 @@
 #=====> ZSH <=====#
-function precmd() {
-  if [[ -n "$__ZSH_PROMPT_STARTED" ]]; then
-    echo
-  fi
-  __ZSH_PROMPT_STARTED=true
-}
-
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
