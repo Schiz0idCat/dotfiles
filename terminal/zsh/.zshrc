@@ -1,4 +1,19 @@
 #=====> ZSH <=====#
+# space between last command and input prompt
+function preexec() {
+  __last_command="$1"
+  __command_ran=1
+}
+
+function precmd() {
+  if [[ $__command_ran == 1 && $__last_command != clear && $__last_command != reset ]]; then
+    print
+  fi
+
+  unset __command_ran
+  unset __last_command
+}
+
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview '/usr/bin/lsd --color=always $realpath'
