@@ -30,3 +30,7 @@ toolsLn=(
 fontLn=(
     "~/dotfiles/fontconfig/:~/.config/"
 )
+
+scriptsLn=(
+    "~/dotfiles/extras/scripts/hdmi-audio.sh:~/.local/bin/hdmi-audio"
+)

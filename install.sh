@@ -134,4 +134,11 @@ echo -e "\nSocial configs setup."
 
 echo ""
 
+echo "#==========>   SCRIPTS   <==========#"
+makeLink "${scriptsLn[@]}"
+
+echo -e "Scripts installed"
+
+echo ""
+
 echo "Dotfiles have been installed successfully :)"
