@@ -94,4 +94,5 @@ other=(
 
 social=(
     "$socialDir/discord.sh"
+    "$socialDir/pear-desktop.sh"
 )
