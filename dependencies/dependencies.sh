@@ -93,6 +93,5 @@ other=(
 )
 
 social=(
-    "$socialDir/spotify.sh"
     "$socialDir/discord.sh"
 )
