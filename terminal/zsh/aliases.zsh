@@ -2,14 +2,14 @@
 alias cat='bat --paging=never'
 
 #=====> ls <=====#
-alias ls='lsd'
-alias ll='lsd -l'
-alias la='lsd -a'
-alias lla='lsd -la'
-alias lt='lsd --tree'
-alias ltl='lsd --tree -l'
-alias lta='lsd --tree -a'
-alias ltla='lsd --tree -la'
+alias ls='lsd --group-directories-first'
+alias ll='lsd -l --group-directories-first'
+alias la='lsd -a --group-directories-first'
+alias lla='lsd -la --group-directories-first'
+alias lt='lsd --tree --group-directories-first'
+alias ltl='lsd --tree -l --group-directories-first'
+alias lta='lsd --tree -a --group-directories-first'
+alias ltla='lsd --tree -la --group-directories-first'
 
 #=====> fzf <=====#
 alias fzf="fzf --reverse --style full \
