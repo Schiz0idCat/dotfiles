@@ -1,30 +1,19 @@
-return {
-    {
-        "lukas-reineke/indent-blankline.nvim",
+vim.pack.add({
+    { src = "https://github.com/lukas-reineke/virt-column.nvim" },
+    { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+})
 
-        config = function()
-            local ibl = require("ibl")
-
-            ibl.setup({
-                scope = {
-                    show_start = false,
-                    show_end = false,
-                },
-            })
-        end,
+require("ibl").setup({
+    scope = {
+        show_start = false,
+        show_end = false,
     },
-    {
-        "lukas-reineke/virt-column.nvim",
-        config = function()
-            local virt_column = require("virt-column")
+})
 
-            virt_column.setup({
-                virtcolumn = "120",
-                char = "│",
-                exclude = {
-                    filetypes = { "markdown", "text", "vimwiki" },
-                },
-            })
-        end,
+require("virt-column").setup({
+    virtcolumn = "120",
+    char = "│",
+    exclude = {
+        filetypes = { "markdown", "text", "vimwiki" },
     },
-}
+})

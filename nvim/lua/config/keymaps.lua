@@ -32,30 +32,22 @@ map('i', '<C-z>', '<Nop>')
 map('v', '<C-z>', '<Nop>')
 
 ---------->   SNIPPETS   <----------
-local luasnip = require("luasnip")
-map({ "i", "s" }, "<Tab>", function()
-    if luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-    else
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n", true)
-    end
-end, { desc = "Jump forward in snippet" })
-
-map({ "i", "s" }, "<S-Tab>", function()
-    if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-    else
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), "n", true)
-    end
-end, { desc = "Jump backward in snippet" })
-
----------->   TELESCOPE   <----------
-local builtin = require("telescope.builtin")
-map("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files", silent = true })
-map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep", silent = true })
-map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers", silent = true })
-map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags", silent = true })
-map("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope diagnostics", silent = true })
+-- local luasnip = require("luasnip")
+-- map({ "i", "s" }, "<Tab>", function()
+--     if luasnip.expand_or_jumpable() then
+--         luasnip.expand_or_jump()
+--     else
+--         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n", true)
+--     end
+-- end, { desc = "Jump forward in snippet" })
+--
+-- map({ "i", "s" }, "<S-Tab>", function()
+--     if luasnip.jumpable(-1) then
+--         luasnip.jump(-1)
+--     else
+--         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), "n", true)
+--     end
+-- end, { desc = "Jump backward in snippet" })
 
 ---------->   NVIMTREE   <----------
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree", silent = true })
@@ -69,13 +61,14 @@ map("n", "<leader>gf", function()
     vim.lsp.buf.format()
 end, { desc = "Apply format", silent = true })
 map("n", "<leader>ih", function()
-  local bufnr = 0
-  local current = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
-  vim.lsp.inlay_hint.enable(not current, { bufnr = bufnr })
+    local bufnr = 0
+    local current = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+    vim.lsp.inlay_hint.enable(not current, { bufnr = bufnr })
 end, { desc = "Toggle inlay hints", silent = true })
 
 -- rename
-map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]], { desc = "Replace in buffer", silent = true })
+map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]],
+    { desc = "Replace in buffer", silent = true })
 map("n", "<leader>rp", function()
     local word = vim.fn.input("Search: ")
     local replacement = vim.fn.input("Replace: ")
@@ -88,14 +81,15 @@ end, { desc = "Replace in project", noremap = true, silent = true })
 
 -- diagnostics
 map("n", "<leader>df", function()
-  vim.diagnostic.open_float(nil, { border = "rounded" })
+    vim.diagnostic.open_float(nil, { border = "rounded" })
 end, { desc = "Open floating diagnostics" })
 map("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Show diagnostics list" })
 
 ---------->   BUFFERLINE    <----------
 for i = 1, 9 do
-    map('n', '<leader>' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>', { desc = "[1-9] go to buffer", silent = true })
-    map("n", "<leader>q" .. i, function()
+    map('n', '<leader>b' .. i, '<Cmd>BufferLineGoToBuffer ' .. i .. '<CR>',
+        { desc = "[1-9] go to buffer", silent = true })
+    map("n", "<leader>bq" .. i, function()
         local ok, bufferline = pcall(require, "bufferline")
         if not ok then
             vim.notify("Bufferline not loaded", vim.log.levels.ERROR)
@@ -107,7 +101,12 @@ for i = 1, 9 do
         end)
     end, { desc = "[1-9] Close buffer ", silent = true })
 end
-map('n', '<leader>qq', ':bd<CR>', { desc = 'Close current buffer', silent = true })
+map('n', '<leader>bqq', ':bd<CR>', { desc = 'Close current buffer', silent = true })
+map("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
+map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
+map("n", "<A-Left>", ":BufferLineMovePrev<CR>", { silent = true })
+map("n", "<A-Right>", ":BufferLineMoveNext<CR>", { silent = true })
+
 
 ---------->   git   <----------
 map("n", "<leader>gc", ":Gitsigns preview_hunk_inline<CR>", { desc = "show git changes", silent = true })
@@ -123,7 +122,7 @@ map('n', '<Leader>ls', '', {
 
         vim.fn.jobstart({
             'npx', 'live-server', '--quiet', '--port=8080', '--watch=*.html,*.css,*.js'
-        }, {cwd = project_dir, detach = true})
+        }, { cwd = project_dir, detach = true })
         vim.fn.system('xdg-open http://127.0.0.1:8080/index.html')
     end
 })
@@ -139,7 +138,7 @@ map('n', '<Leader>lsc', '', {
 
         vim.fn.jobstart({
             'npx', 'live-server', '--quiet', '--port=8080', '--watch=*.html,*.css,*.js'
-        }, {cwd = project_dir, detach = true})
+        }, { cwd = project_dir, detach = true })
         vim.fn.system('xdg-open http://127.0.0.1:8080/' .. rel_path)
     end
 })

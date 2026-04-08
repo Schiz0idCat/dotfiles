@@ -1,20 +1,19 @@
-return {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000,
-    config = function()
-        require("onedarkpro").setup({
-            highlights = {
-                -- lenguague: rust
-                ["@lsp.typemod.variable.mutable.rust"] = { underline = true },
+vim.pack.add({
+    "https://github.com/olimorris/onedarkpro.nvim"
+})
 
-                -- lenguague: java
-                ["@lsp.type.modifier.java"] = { fg = "${purple}" },
+require("onedarkpro").setup({
+    highlights = {
+        -- lenguague: rust
+        ["@lsp.typemod.variable.mutable.rust"] = { underline = true },
 
-                -- plugin: gitsigns
-                GitSignsAdd = { fg = "${green}" },
-                GitSignsChange = { fg = "${yellow}" },
-            },
-        })
-        vim.cmd("colorscheme onedark")
-    end,
-}
+        -- lenguague: java
+        ["@lsp.type.modifier.java"] = { fg = "${purple}" },
+
+        -- plugin: gitsigns
+        GitSignsAdd = { fg = "${green}" },
+        GitSignsChange = { fg = "${yellow}" },
+    },
+})
+
+vim.cmd("colorscheme onedark")
