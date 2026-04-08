@@ -7,17 +7,6 @@ vim.lsp.config('rust_analyzer', {
                 },
                 prefix = "self",
             },
-            cargo = {
-                buildScripts = {
-                    enable = true,
-                },
-            },
-            procMacro = {
-                enable = true
-            },
-            inlay_hints = {
-                auto = true,
-            },
         }
     }
 })
