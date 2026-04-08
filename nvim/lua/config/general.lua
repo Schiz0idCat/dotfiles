@@ -1,6 +1,6 @@
 local opt = vim.opt
 
----------->   TAB   <----------
+---------->   INDENTING   <----------
 opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
@@ -9,7 +9,7 @@ opt.shiftwidth = 4
 ---------->   CLIPBOARD   <----------
 opt.clipboard = "unnamedplus"
 
----------->   LINES   <----------
+---------->   ORIENTATION   <----------
 opt.number = true
 opt.relativenumber = true
 opt.signcolumn = "yes"
