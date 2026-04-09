@@ -1,6 +1,8 @@
 require("config.general")
 require("config.lsp")
 require("config.keymaps")
+require("config.packadd")
+require("config.ui2")
 require("plugins.onedark")
 require("plugins.telescope")
 require("plugins.buffer-line")
