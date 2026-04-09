@@ -15,7 +15,8 @@ opt.relativenumber = true
 opt.signcolumn = "yes"
 opt.scrolloff = 5
 
----------->   WINDOWS   <----------
+---------->   UI   <----------
+vim.opt.cmdheight = 0
 opt.winborder = "rounded"
 
 ---------->   AUTOCOMMANDS   <----------
