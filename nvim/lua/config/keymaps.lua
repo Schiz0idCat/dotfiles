@@ -31,24 +31,6 @@ map('n', '<C-z>', '<Nop>')
 map('i', '<C-z>', '<Nop>')
 map('v', '<C-z>', '<Nop>')
 
----------->   SNIPPETS   <----------
--- local luasnip = require("luasnip")
--- map({ "i", "s" }, "<Tab>", function()
---     if luasnip.expand_or_jumpable() then
---         luasnip.expand_or_jump()
---     else
---         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n", true)
---     end
--- end, { desc = "Jump forward in snippet" })
---
--- map({ "i", "s" }, "<S-Tab>", function()
---     if luasnip.jumpable(-1) then
---         luasnip.jump(-1)
---     else
---         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), "n", true)
---     end
--- end, { desc = "Jump backward in snippet" })
-
 ---------->   NVIMTREE   <----------
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree", silent = true })
 
