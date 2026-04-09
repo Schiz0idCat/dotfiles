@@ -2,6 +2,37 @@ vim.pack.add({
     "https://github.com/nvim-lualine/lualine.nvim"
 })
 
+local theme = require("onedarkpro.helpers")
+local colors = theme.get_colors()
+
+local function show_macro_recording()
+    local recording_register = vim.fn.reg_recording()
+
+    if recording_register ~= "" then
+        return "Recording @" .. recording_register
+    end
+
+    return ""
+end
+
+vim.api.nvim_create_autocmd("RecordingEnter", {
+    callback = function()
+        require('lualine').refresh({
+            place = { 'statusline' },
+        })
+    end,
+})
+
+vim.api.nvim_create_autocmd("RecordingLeave", {
+    callback = function()
+        vim.defer_fn(function()
+            require('lualine').refresh({
+                place = { 'statusline' },
+            })
+        end, 50)
+    end,
+})
+
 require("lualine").setup({
     options = {
         theme = "horizon",
@@ -23,7 +54,7 @@ require("lualine").setup({
                 },
             },
         },
-        lualine_x = { "encoding" },
+        lualine_x = { { show_macro_recording, color = { fg = colors.yellow } }, "encoding" },
         lualine_y = { "filetype" },
         lualine_z = { "location" },
     },
