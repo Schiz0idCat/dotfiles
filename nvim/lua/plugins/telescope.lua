@@ -5,8 +5,8 @@ vim.pack.add({
 })
 
 vim.cmd [[packadd plenary.nvim]]
-vim.cmd [[packadd telescope.nvim]]
 vim.cmd [[packadd telescope-fzf-native.nvim]]
+vim.cmd [[packadd telescope.nvim]]
 
 require("telescope").setup({
     defaults = {
