@@ -17,6 +17,7 @@ opt.scrolloff = 5
 
 ---------->   UI   <----------
 opt.cmdheight = 0
+opt.ruler = false -- This fix a bug related with telescope and ui2
 opt.winborder = "rounded"
 
 ---------->   AUTOCOMMANDS   <----------
