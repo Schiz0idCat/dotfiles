@@ -20,6 +20,10 @@ opt.cmdheight = 0
 opt.ruler = false -- This fix a bug related with telescope and ui2
 opt.winborder = "rounded"
 
+---------->   UI   <----------
+opt.shortmess:append("W") -- Disable "written" message when saving
+opt.report = 100          -- Disable undo/redo line change reporting
+
 ---------->   AUTOCOMMANDS   <----------
 -- no numbers when is a {pattern} file type
 vim.api.nvim_create_autocmd("FileType", {

@@ -21,7 +21,9 @@ map("v", "<leader>(", "c(<C-r>\")<Esc>", { noremap = true, silent = true })
 map("v", "<leader>*", "c*<C-r>\"*<Esc>", { noremap = true, silent = true })
 map("v", "<leader>2*", "c**<C-r>\"**<Esc>", { noremap = true, silent = true })
 
-map({ "n", "i", "v" }, "<C-s>", "<Esc>:w<CR>", { noremap = true, desc = "Save file", silent = true })
+map("n", "u", ":silent undo<cr>", { silent = true })
+map("n", "<C-r>", ":silent redo<cr>", { silent = true })
+map({ "n", "i", "v" }, "<C-s>", "<Esc>:silent w<CR>", { noremap = true, desc = "Save file", silent = true })
 
 map('n', '<leader>a', ':%y+<CR>', { noremap = true, silent = true, desc = "copy all" })
 
