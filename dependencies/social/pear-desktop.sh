@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if ! command -v pear-desktop >/dev/null 2>&1; then
-    echo "Installing pear-desktop..."
+if ! command -v spotify-launcher >/dev/null 2>&1; then
+    echo "Installing spotify..."
 
-    if ! yay -S --noconfirm --needed --answerclean None --answerdiff None pear-desktop; then
-        echo "Error: failed to install pear-desktop. Aborting."
+    if ! sudo pacman -S --noconfirm spotify-launcher; then
+        echo "Error: failed to install spotify. Aborting."
         exit 1
     fi
 fi
 
-echo "pear-desktop installed."
+echo "spotify installed."
