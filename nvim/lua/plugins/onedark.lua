@@ -14,6 +14,10 @@ require("onedarkpro").setup({
         GitSignsAdd = { fg = "${green}" },
         GitSignsChange = { fg = "${yellow}" },
     },
+    options = {
+        transparency = true,
+    },
 })
 
 vim.cmd("colorscheme onedark")
+vim.api.nvim_set_hl(0, "EndOfBuffer", { link = "Whitespace" })

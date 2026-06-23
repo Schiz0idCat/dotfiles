@@ -2,8 +2,25 @@ vim.pack.add({
     "https://github.com/nvim-lualine/lualine.nvim"
 })
 
-local theme = require("onedarkpro.helpers")
-local colors = theme.get_colors()
+local colors = require("onedarkpro.helpers").get_colors()
+
+local transparent_sections = {
+    a = { bg = "NONE", bold = true },
+    b = { bg = "NONE" },
+    c = { bg = "NONE" },
+    x = { bg = "NONE" },
+    y = { bg = "NONE" },
+    z = { bg = "NONE" },
+}
+
+local transparent = {
+    normal   = transparent_sections,
+    insert   = transparent_sections,
+    visual   = transparent_sections,
+    replace  = transparent_sections,
+    command  = transparent_sections,
+    inactive = transparent_sections,
+}
 
 local function show_macro_recording()
     local recording_register = vim.fn.reg_recording()
@@ -35,12 +52,19 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 
 require("lualine").setup({
     options = {
-        theme = "horizon",
+        theme = transparent,
         ignore_focus = { "NvimTree" },
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
     },
     sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_a = {
+            {
+                "mode",
+                color = { bg = "NONE", fg = colors.red, bold = true }
+            }
+        },
+        lualine_b = { { "branch", color = { fg = colors.green } }, "diff", "diagnostics" },
         lualine_c = {
             {
                 "filename",
@@ -56,7 +80,14 @@ require("lualine").setup({
         },
         lualine_x = { { show_macro_recording, color = { fg = colors.yellow } }, "encoding" },
         lualine_y = { "filetype" },
-        lualine_z = { "location" },
+        -- lualine_z = { { "location", color = { bg = "NONE", fg = colors.white } } },
+        lualine_z = {
+            {
+                "location",
+                separator = { left = '' },
+                color = "LualineTransparentLocation",
+            }
+        },
     },
     inactive_sections = {
         lualine_a = {},
@@ -64,6 +95,6 @@ require("lualine").setup({
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { "location" },
+        lualine_z = {},
     },
 })
