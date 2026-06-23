@@ -19,10 +19,16 @@ opt.scrolloff = 5
 opt.cmdheight = 0
 opt.ruler = false -- This fix a bug related with telescope and ui2
 opt.winborder = "rounded"
-
----------->   UI   <----------
+vim.opt.fillchars = { eob = " " }
 opt.shortmess:append("W") -- Disable "written" message when saving
 opt.report = 100          -- Disable undo/redo line change reporting
+
+---------->   FOLD   <----------
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
+opt.foldmethod = 'expr'
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
 ---------->   AUTOCOMMANDS   <----------
 -- no numbers when is a {pattern} file type
