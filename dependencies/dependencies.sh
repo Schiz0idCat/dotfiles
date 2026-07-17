@@ -28,7 +28,6 @@ browser=(
 tools=(
     "$toolsDir/yay.sh"
     "$toolsDir/brightnessctl.sh"
-    "$toolsDir/unzip.sh"
     "$toolsDir/curl.sh"
     "$toolsDir/wget.sh"
     "$toolsDir/fd.sh"
