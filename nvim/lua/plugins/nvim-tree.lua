@@ -26,5 +26,6 @@ require("nvim-tree").setup({
     },
     renderer = {
         root_folder_label = false,
+        group_empty = true,
     },
 })
