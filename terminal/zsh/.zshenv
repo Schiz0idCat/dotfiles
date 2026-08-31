@@ -61,6 +61,9 @@ export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
 # editor
 export EDITOR='nvim'
 
+# terminal
+export TERMINAL="kitty"
+
 # cursor
 export XCURSOR_THEME=capitaine-cursors
 export XCURSOR_SIZE=32
