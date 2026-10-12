@@ -9,6 +9,7 @@ vim.lsp.enable({
     "vtsls",
     "html",
     "cssls",
+    "ts_ls"
 })
 
 -- enviroment variables
