@@ -7,28 +7,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_MUSIC_DIR="$HOME/Music"
 
-#=====> OTHER <=====#
-# cups (printer)
-export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
-export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
-export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
-
-# mozilla
-export MOZ_DATA_PATH="$XDG_CONFIG_HOME/mozilla"
-
-# latex
-export TEXMFHOME=$XDG_DATA_HOME/texmf
-export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
-export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
-
-#=====> ZSH <=====#
-# oh-my-zsh
-export ZSH="$HOME/.config/oh-my-zsh"
-
-# zsh
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
-
 #=====> PROGRAMMING <=====#
 # git
 export GIT_CONFIG_HOME="$XDG_CONFIG_HOME/git"
@@ -76,7 +54,7 @@ DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 # gnu
 GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
-#=====> GENERAL <=====#
+#=====> SYSTEM <=====#
 # editor
 export EDITOR='nvim'
 
@@ -87,7 +65,27 @@ export TERMINAL="kitty"
 export XCURSOR_THEME=capitaine-cursors
 export XCURSOR_SIZE=32
 
+# oh-my-zsh
+export ZSH="$HOME/.config/oh-my-zsh"
+
+# zsh
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
+
 #=====> OTHER <=====#
+# cups (printer)
+export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
+export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
+export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
+
+# mozilla
+export MOZ_DATA_PATH="$XDG_CONFIG_HOME/mozilla"
+
+# latex
+export TEXMFHOME=$XDG_DATA_HOME/texmf
+export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
+
 # spicetify
 export PATH="$PATH:$HOME/.config/spicetify"
 export SPICETIFY_CONFIG_HOME="$HOME/.config/spicetify"
