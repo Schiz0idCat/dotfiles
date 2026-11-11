@@ -13,6 +13,14 @@ export CUPS_CONFIG_DIR="$XDG_CONFIG_HOME/cups"
 export CUPS_CACHE_DIR="$XDG_CACHE_HOME/cups"
 export CUPS_DATA_DIR="$XDG_DATA_HOME/cups"
 
+# mozilla
+export MOZ_DATA_PATH="$XDG_CONFIG_HOME/mozilla"
+
+# latex
+export TEXMFHOME=$XDG_DATA_HOME/texmf
+export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
+
 #=====> ZSH <=====#
 # oh-my-zsh
 export ZSH="$HOME/.config/oh-my-zsh"
@@ -57,6 +65,16 @@ export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
 
 # python
 export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+
+# copilot
+COPILOT_HOME="$XDG_CONFIG_HOME"/copilot
+
+# docker
+DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+
+# gnu
+GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 #=====> GENERAL <=====#
 # editor
